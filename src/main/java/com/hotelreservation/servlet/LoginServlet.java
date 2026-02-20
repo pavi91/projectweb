@@ -9,11 +9,11 @@ import com.hotelreservation.repository.impl.UserDAOImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
@@ -47,11 +47,22 @@ public class LoginServlet extends HttpServlet {
 
         logger.debug("GET /login - Display login form");
 
-        // Check if already logged in
+        // Handle logout parameter (backward compatibility)
+        String logoutParam = request.getParameter("logout");
         HttpSession session = request.getSession(false);
+
+        if ("true".equals(logoutParam) && session != null) {
+            String username = (String) session.getAttribute("username");
+            logger.info("User logging out via login?logout=true: {}", username);
+            session.invalidate();
+            response.sendRedirect(request.getContextPath() + "/login?message=You%20have%20been%20logged%20out%20successfully");
+            return;
+        }
+
+        // Check if already logged in
         if (session != null && session.getAttribute("userId") != null) {
             String role = (String) session.getAttribute("role");
-            String redirectUrl = getDashboardUrl(role);
+            String redirectUrl = getDashboardUrl(request.getContextPath(), role);
             logger.info("User already logged in, redirecting to: {}", redirectUrl);
             response.sendRedirect(redirectUrl);
             return;
@@ -83,7 +94,7 @@ public class LoginServlet extends HttpServlet {
         if (username == null || username.trim().isEmpty() ||
             password == null || password.trim().isEmpty()) {
             logger.warn("Login attempt with empty credentials");
-            response.sendRedirect("/projectweb/login?message=Username%20and%20password%20required");
+            response.sendRedirect(request.getContextPath() + "/login?message=Username%20and%20password%20required");
             return;
         }
 
@@ -97,12 +108,12 @@ public class LoginServlet extends HttpServlet {
             createUserSession(request, response, authResult.getUser());
 
             // Redirect to appropriate dashboard
-            String redirectUrl = getDashboardUrl(authResult.getUserRole());
+            String redirectUrl = getDashboardUrl(request.getContextPath(), authResult.getUserRole());
             response.sendRedirect(redirectUrl);
         } else {
             logger.warn("Failed login attempt for user: {}", username);
             String errorMessage = authResult.getMessage();
-            response.sendRedirect("/projectweb/login?message=" + encodeUrlParameter(errorMessage));
+            response.sendRedirect(request.getContextPath() + "/login?message=" + encodeUrlParameter(errorMessage));
         }
     }
 
@@ -126,19 +137,19 @@ public class LoginServlet extends HttpServlet {
     /**
      * Get dashboard URL based on user role
      */
-    private String getDashboardUrl(String role) {
+    private String getDashboardUrl(String contextPath, String role) {
         switch (role) {
             case "GUEST":
-                return "/projectweb/reservation/search";
+                return contextPath + "/reservation/search";
             case "RECEPTIONIST":
-                return "/projectweb/frontdesk/dashboard";
+                return contextPath + "/frontdesk/dashboard";
             case "ADMIN":
-                return "/projectweb/admin/dashboard";
+                return contextPath + "/admin/dashboard";
             case "MAINTENANCE":
-                return "/projectweb/maintenance/dashboard";
+                return contextPath + "/maintenance/dashboard";
             default:
                 logger.warn("Unknown role for dashboard redirect: {}", role);
-                return "/projectweb/";
+                return contextPath + "/";
         }
     }
 

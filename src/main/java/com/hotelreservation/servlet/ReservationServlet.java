@@ -7,6 +7,8 @@ import com.hotelreservation.dto.ReservationDTO;
 import com.hotelreservation.dto.RoomDTO;
 import com.hotelreservation.service.impl.BookingService;
 import com.hotelreservation.service.impl.RoomServiceImpl;
+import com.hotelreservation.service.impl.OnlineResService;
+import com.hotelreservation.service.impl.WalkInResService;
 import com.hotelreservation.repository.impl.UserDAOImpl;
 import com.hotelreservation.repository.impl.RoomDAOImpl;
 import com.hotelreservation.repository.impl.ReservationDAOImpl;
@@ -16,10 +18,10 @@ import com.hotelreservation.service.impl.ReportServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
@@ -45,13 +47,14 @@ public class ReservationServlet extends HttpServlet {
         super.init();
         // Initialize services
         roomService = new RoomServiceImpl(new RoomDAOImpl());
+        ReservationDAOImpl reservationDAO = new ReservationDAOImpl();
 
         BookingService bookingService = new BookingService(
-            null, // OnlineResService - will be initialized in controller
-            null, // WalkInResService - will be initialized in controller
+            new OnlineResService(reservationDAO),
+            new WalkInResService(reservationDAO),
             roomService,
             new PaymentServiceImpl(),
-            new ReservationDAOImpl()
+            reservationDAO
         );
 
         controller = new ReservationController(bookingService, roomService);

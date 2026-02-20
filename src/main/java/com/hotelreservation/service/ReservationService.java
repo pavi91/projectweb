@@ -4,6 +4,7 @@ import com.hotelreservation.dto.ReservationDTO;
 import com.hotelreservation.entity.Guest;
 import com.hotelreservation.entity.Reservation;
 import com.hotelreservation.entity.Room;
+import com.hotelreservation.repository.ReservationRepository;
 import com.hotelreservation.strategy.IPricingStrategy;
 
 /**
@@ -143,13 +144,4 @@ public abstract class ReservationService {
     }
 }
 
-/**
- * ReservationRepository interface - needed for this abstract class
- * Would normally be imported from service package
- */
-interface ReservationRepository {
-    java.util.Optional<Reservation> findById(String id);
-    Reservation save(Reservation reservation);
-    void update(Reservation reservation);
-}
 

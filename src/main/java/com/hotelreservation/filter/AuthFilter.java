@@ -4,10 +4,10 @@ import com.hotelreservation.dto.UserDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.servlet.*;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.*;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
@@ -25,22 +25,24 @@ import java.util.Set;
 public class AuthFilter implements Filter {
     private static final Logger logger = LoggerFactory.getLogger(AuthFilter.class);
 
-    // Public URLs (no authentication required)
-    private static final Set<String> PUBLIC_URLS = new HashSet<>();
+    // Public URL suffixes (relative to context path, no authentication required)
+    private static final Set<String> PUBLIC_PATHS = new HashSet<>();
     static {
-        PUBLIC_URLS.add("/projectweb/");
-        PUBLIC_URLS.add("/projectweb/login");
-        PUBLIC_URLS.add("/projectweb/jsp/login.jsp");
-        PUBLIC_URLS.add("/projectweb/jsp/error.jsp");
-        PUBLIC_URLS.add("/projectweb/jsp/404.jsp");
-        PUBLIC_URLS.add("/projectweb/jsp/500.jsp");
-        PUBLIC_URLS.add("/projectweb/index.jsp");
+        PUBLIC_PATHS.add("/");
+        PUBLIC_PATHS.add("");
+        PUBLIC_PATHS.add("/login");
+        PUBLIC_PATHS.add("/logout");
+        PUBLIC_PATHS.add("/jsp/login.jsp");
+        PUBLIC_PATHS.add("/jsp/error.jsp");
+        PUBLIC_PATHS.add("/jsp/404.jsp");
+        PUBLIC_PATHS.add("/jsp/500.jsp");
+        PUBLIC_PATHS.add("/index.jsp");
     }
 
-    // Protected URL patterns and their required roles
-    private static final String GUEST_PATTERN = "/projectweb/reservation";
-    private static final String DESK_PATTERN = "/projectweb/frontdesk";
-    private static final String ADMIN_PATTERN = "/projectweb/admin";
+    // Protected URL path prefixes (relative to context path) and their required roles
+    private static final String GUEST_PATTERN = "/reservation";
+    private static final String DESK_PATTERN = "/frontdesk";
+    private static final String ADMIN_PATTERN = "/admin";
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -55,13 +57,16 @@ public class AuthFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
         String requestURI = request.getRequestURI();
+        String contextPath = request.getContextPath();
+        // Get path relative to context root (e.g. "/login", "/reservation/search")
+        String path = requestURI.substring(contextPath.length());
         String method = request.getMethod();
 
-        logger.debug("Request: {} {}", method, requestURI);
+        logger.debug("Request: {} {} (path: {})", method, requestURI, path);
 
         // Allow public URLs without authentication
-        if (isPublicUrl(requestURI)) {
-            logger.debug("Public URL, allowing access: {}", requestURI);
+        if (isPublicUrl(path)) {
+            logger.debug("Public URL, allowing access: {}", path);
             filterChain.doFilter(request, response);
             return;
         }
@@ -70,8 +75,8 @@ public class AuthFilter implements Filter {
         HttpSession session = request.getSession(false);
 
         if (session == null) {
-            logger.warn("No session found for protected URL: {}", requestURI);
-            redirectToLogin(response, "Session expired. Please login again.");
+            logger.warn("No session found for protected URL: {}", path);
+            redirectToLogin(request, response, "Session expired. Please login again.");
             return;
         }
 
@@ -80,18 +85,18 @@ public class AuthFilter implements Filter {
         Object userRoleObj = session.getAttribute("role");
 
         if (userIdObj == null || userRoleObj == null) {
-            logger.warn("Invalid session attributes for URL: {}", requestURI);
+            logger.warn("Invalid session attributes for URL: {}", path);
             session.invalidate();
-            redirectToLogin(response, "Session invalid. Please login again.");
+            redirectToLogin(request, response, "Session invalid. Please login again.");
             return;
         }
 
         String userRole = (String) userRoleObj;
 
         // Check role-based access
-        if (!hasAccessToUrl(requestURI, userRole)) {
-            logger.warn("Access denied for user with role {} to URL: {}", userRole, requestURI);
-            respondWithAccessDenied(response, userRole);
+        if (!hasAccessToUrl(path, userRole)) {
+            logger.warn("Access denied for user with role {} to URL: {}", userRole, path);
+            respondWithAccessDenied(request, response, userRole);
             return;
         }
 
@@ -100,7 +105,7 @@ public class AuthFilter implements Filter {
         request.setAttribute("userRole", userRole);
         request.setAttribute("username", session.getAttribute("username"));
 
-        logger.debug("User {} (role: {}) accessing: {}", userIdObj, userRole, requestURI);
+        logger.debug("User {} (role: {}) accessing: {}", userIdObj, userRole, path);
 
         // Allow request to proceed
         filterChain.doFilter(request, response);
@@ -113,37 +118,40 @@ public class AuthFilter implements Filter {
 
     /**
      * Check if URL is public (no authentication required)
+     * @param path the path relative to context root
      */
-    private boolean isPublicUrl(String requestURI) {
-        return PUBLIC_URLS.contains(requestURI) ||
-               requestURI.endsWith(".css") ||
-               requestURI.endsWith(".js") ||
-               requestURI.endsWith(".jpg") ||
-               requestURI.endsWith(".png") ||
-               requestURI.endsWith(".gif");
+    private boolean isPublicUrl(String path) {
+        return PUBLIC_PATHS.contains(path) ||
+               path.endsWith(".css") ||
+               path.endsWith(".js") ||
+               path.endsWith(".jpg") ||
+               path.endsWith(".png") ||
+               path.endsWith(".gif") ||
+               path.endsWith(".ico");
     }
 
     /**
      * Check if user has access to requested URL based on role
+     * @param path the path relative to context root
      */
-    private boolean hasAccessToUrl(String requestURI, String userRole) {
+    private boolean hasAccessToUrl(String path, String userRole) {
         // Guest URLs
-        if (requestURI.contains(GUEST_PATTERN)) {
-            return userRole.equals("GUEST");
+        if (path.startsWith(GUEST_PATTERN)) {
+            return "GUEST".equals(userRole);
         }
 
         // Receptionist URLs
-        if (requestURI.contains(DESK_PATTERN)) {
-            return userRole.equals("RECEPTIONIST");
+        if (path.startsWith(DESK_PATTERN)) {
+            return "RECEPTIONIST".equals(userRole);
         }
 
         // Admin URLs
-        if (requestURI.contains(ADMIN_PATTERN)) {
-            return userRole.equals("ADMIN");
+        if (path.startsWith(ADMIN_PATTERN)) {
+            return "ADMIN".equals(userRole);
         }
 
         // Dashboard access based on role
-        if (requestURI.contains("/dashboard")) {
+        if (path.contains("/dashboard")) {
             return true;
         }
 
@@ -153,21 +161,23 @@ public class AuthFilter implements Filter {
     /**
      * Redirect user to login page
      */
-    private void redirectToLogin(HttpServletResponse response, String message) throws IOException {
+    private void redirectToLogin(HttpServletRequest request, HttpServletResponse response, String message) throws IOException {
+        String contextPath = request.getContextPath();
         logger.info("Redirecting to login: {}", message);
-        response.sendRedirect("/projectweb/login?message=" + encodeUrlParameter(message));
+        response.sendRedirect(contextPath + "/login?message=" + encodeUrlParameter(message));
     }
 
     /**
      * Respond with access denied message
      */
-    private void respondWithAccessDenied(HttpServletResponse response, String userRole) throws IOException {
+    private void respondWithAccessDenied(HttpServletRequest request, HttpServletResponse response, String userRole) throws IOException {
+        String contextPath = request.getContextPath();
         logger.warn("Access denied for role: {}", userRole);
         response.setStatus(HttpServletResponse.SC_FORBIDDEN);
         response.setContentType("text/html");
         response.getWriter().println("<h1>Access Denied</h1>");
         response.getWriter().println("<p>Your role (" + userRole + ") does not have access to this page.</p>");
-        response.getWriter().println("<a href='/projectweb/'>Go to Home</a>");
+        response.getWriter().println("<a href='" + contextPath + "/'>Go to Home</a>");
     }
 
     /**

@@ -13,6 +13,7 @@ import com.hotelreservation.mapper.RoomMapper;
 import com.hotelreservation.repository.ReservationRepository;
 import com.hotelreservation.repository.RoomRepository;
 import com.hotelreservation.service.PaymentService;
+import com.hotelreservation.service.RoomService;
 import com.hotelreservation.strategy.StandardRateStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

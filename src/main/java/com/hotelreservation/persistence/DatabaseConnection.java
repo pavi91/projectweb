@@ -78,6 +78,7 @@ public class DatabaseConnection {
     private void initializeDataSource() {
         try {
             HikariConfig hikariConfig = new HikariConfig();
+            hikariConfig.setDriverClassName(config.getProperty("db.driver", "com.mysql.cj.jdbc.Driver"));
             hikariConfig.setJdbcUrl(config.getProperty("db.url"));
             hikariConfig.setUsername(config.getProperty("db.username"));
             hikariConfig.setPassword(config.getProperty("db.password"));
@@ -87,11 +88,15 @@ public class DatabaseConnection {
             hikariConfig.setIdleTimeout(600000);
             hikariConfig.setMaxLifetime(1800000);
             hikariConfig.setAutoCommit(true);
+            hikariConfig.setConnectionTestQuery("SELECT 1");
+
+            logger.info("Initializing HikariCP with URL: {}, user: {}",
+                    config.getProperty("db.url"), config.getProperty("db.username"));
 
             this.dataSource = new HikariDataSource(hikariConfig);
             logger.info("HikariCP connection pool initialized successfully");
         } catch (Exception e) {
-            logger.error("Failed to initialize connection pool", e);
+            logger.error("Failed to initialize connection pool: {}", e.getMessage(), e);
             throw new RuntimeException("Connection pool initialization failed", e);
         }
     }

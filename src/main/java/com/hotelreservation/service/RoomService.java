@@ -4,6 +4,7 @@ import com.hotelreservation.dto.RoomDTO;
 import java.time.LocalDate;
 import java.util.List;
 
+
 /**
  * RoomService interface - defines contract for room management and availability
  */
