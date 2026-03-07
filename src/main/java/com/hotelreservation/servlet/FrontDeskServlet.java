@@ -4,18 +4,24 @@ import com.hotelreservation.controller.FrontDeskController;
 import com.hotelreservation.controller.FrontDeskController.ControllerResult;
 import com.hotelreservation.dto.GuestDTO;
 import com.hotelreservation.dto.ReservationDTO;
+import com.hotelreservation.exception.HotelSystemException;
 import com.hotelreservation.service.impl.BookingService;
 import com.hotelreservation.service.impl.RoomServiceImpl;
+import com.hotelreservation.service.impl.OnlineResService;
+import com.hotelreservation.service.impl.WalkInResService;
 import com.hotelreservation.repository.impl.RoomDAOImpl;
 import com.hotelreservation.repository.impl.ReservationDAOImpl;
+import com.hotelreservation.repository.impl.GuestRepositoryImpl;
 import com.hotelreservation.service.impl.PaymentServiceImpl;
+import com.hotelreservation.service.impl.SeasonalPricingServiceImpl;
+import com.hotelreservation.repository.impl.SeasonalPricingDAOImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
@@ -39,13 +45,16 @@ public class FrontDeskServlet extends HttpServlet {
         super.init();
         // Initialize services
         roomService = new RoomServiceImpl(new RoomDAOImpl());
+        ReservationDAOImpl reservationDAO = new ReservationDAOImpl();
 
         BookingService bookingService = new BookingService(
-            null, // OnlineResService
-            null, // WalkInResService
+            new OnlineResService(reservationDAO),
+            new WalkInResService(reservationDAO),
             roomService,
             new PaymentServiceImpl(),
-            new ReservationDAOImpl()
+            reservationDAO,
+            new GuestRepositoryImpl(),
+            new SeasonalPricingServiceImpl(new SeasonalPricingDAOImpl())
         );
 
         controller = new FrontDeskController(bookingService);
@@ -75,7 +84,13 @@ public class FrontDeskServlet extends HttpServlet {
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
             }
         } catch (Exception e) {
-            logger.error("Error handling GET request", e);
+            if (e instanceof HotelSystemException hse) {
+                logger.error("Hotel system error handling GET request: [{}] {}", hse.getErrorCode(), hse.getMessage(), hse);
+                request.setAttribute("errorCode", hse.getErrorCode());
+                request.setAttribute("statusCode", hse.getStatusCode());
+            } else {
+                logger.error("Error handling GET request", e);
+            }
             request.setAttribute("error", e.getMessage());
             request.getRequestDispatcher("/jsp/error.jsp").forward(request, response);
         }
@@ -102,7 +117,13 @@ public class FrontDeskServlet extends HttpServlet {
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
             }
         } catch (Exception e) {
-            logger.error("Error handling POST request", e);
+            if (e instanceof HotelSystemException hse) {
+                logger.error("Hotel system error handling POST request: [{}] {}", hse.getErrorCode(), hse.getMessage(), hse);
+                request.setAttribute("errorCode", hse.getErrorCode());
+                request.setAttribute("statusCode", hse.getStatusCode());
+            } else {
+                logger.error("Error handling POST request", e);
+            }
             request.setAttribute("error", e.getMessage());
             request.getRequestDispatcher("/jsp/error.jsp").forward(request, response);
         }
@@ -131,7 +152,14 @@ public class FrontDeskServlet extends HttpServlet {
      */
     private void handleWalkInForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        logger.debug("Displaying walk-in reservation form");
+        logger.info("Displaying walk-in reservation form - loading available rooms"); // changed to info level
+        try {
+            java.util.List<com.hotelreservation.dto.RoomDTO> rooms = roomService.getAvailableRooms();
+            logger.info("Walk-in form: loaded {} available rooms", rooms != null ? rooms.size() : "null");
+            request.setAttribute("availableRooms", rooms);
+        } catch (Exception e) {
+            logger.error("Error loading available rooms for walk-in form", e);
+        }
         request.getRequestDispatcher("/jsp/receptionist/walkInForm.jsp").forward(request, response);
     }
 
@@ -161,11 +189,13 @@ public class FrontDeskServlet extends HttpServlet {
                 request.getRequestDispatcher("/jsp/receptionist/walkInConfirmation.jsp").forward(request, response);
             } else {
                 request.setAttribute("error", result.getMessage());
+                try { request.setAttribute("availableRooms", roomService.getAvailableRooms()); } catch (Exception ignored) {}
                 request.getRequestDispatcher("/jsp/receptionist/walkInForm.jsp").forward(request, response);
             }
         } catch (NumberFormatException e) {
             logger.error("Invalid input data", e);
             request.setAttribute("error", "Invalid input data");
+            try { request.setAttribute("availableRooms", roomService.getAvailableRooms()); } catch (Exception ignored) {}
             request.getRequestDispatcher("/jsp/receptionist/walkInForm.jsp").forward(request, response);
         }
     }
@@ -186,7 +216,10 @@ public class FrontDeskServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String reservationId = request.getParameter("reservationId");
-        logger.info("Processing check-in for reservation: {}", reservationId);
+        if (reservationId != null) {
+            reservationId = reservationId.trim();
+        }
+        logger.info("Processing check-in for reservation: '{}' (length={})", reservationId, reservationId != null ? reservationId.length() : "null");
 
         ControllerResult<Boolean> result = controller.checkIn(reservationId);
 

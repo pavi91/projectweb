@@ -33,15 +33,10 @@ public abstract class Reservation {
         this.updatedAt = System.currentTimeMillis();
     }
 
-    /**
-     * Abstract method for reservation type identification
-     * @return the type of reservation (ONLINE or WALK_IN)
-     */
+
     public abstract String getReservationType();
 
-    /**
-     * Confirm the reservation
-     */
+
     public void confirm() {
         this.status = "CONFIRMED";
         this.updatedAt = System.currentTimeMillis();

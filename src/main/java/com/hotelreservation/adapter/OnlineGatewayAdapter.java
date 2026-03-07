@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
  * OnlineGatewayAdapter - Adapter for Online Payment Gateway (e.g., Stripe, PayPal)
  * Adapts to external online payment portal for online reservations
  */
+
+
 public class OnlineGatewayAdapter implements IPaymentAdapter {
     private static final Logger logger = LoggerFactory.getLogger(OnlineGatewayAdapter.class);
     private SecureBankPortal bankPortal;
