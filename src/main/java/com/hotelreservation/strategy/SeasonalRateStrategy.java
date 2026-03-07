@@ -22,10 +22,7 @@ public class SeasonalRateStrategy implements IPricingStrategy {
         return "SEASONAL_RATE";
     }
 
-    /**
-     * Update the season multiplier at runtime
-     * @param multiplier new multiplier value (e.g., 1.5 for 50% increase)
-     */
+
     public void setSeasonMultiplier(double multiplier) {
         this.seasonMultiplier = multiplier;
     }
@@ -41,4 +38,3 @@ public class SeasonalRateStrategy implements IPricingStrategy {
                 '}';
     }
 }
-

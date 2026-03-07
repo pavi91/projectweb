@@ -1,0 +1,1293 @@
+2026-02-20 12:41:26.450 [main] INFO  c.hotelreservation.filter.AuthFilter - AuthFilter initialized
+2026-02-20 12:41:45.564 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/ (path: /)
+2026-02-20 12:41:45.566 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /
+2026-02-20 12:41:54.107 [http-nio-8080-exec-2] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/ (path: /)
+2026-02-20 12:41:54.108 [http-nio-8080-exec-2] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /
+2026-02-20 12:42:03.071 [http-nio-8080-exec-3] INFO  c.h.servlet.LoginServlet - LoginServlet initialized
+2026-02-20 12:42:03.072 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 12:42:03.072 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 12:42:03.072 [http-nio-8080-exec-3] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 12:42:11.410 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 12:42:11.411 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 12:42:11.411 [http-nio-8080-exec-4] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 12:42:19.235 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Request: HEAD /projectweb/login (path: /login)
+2026-02-20 12:42:19.235 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 12:42:19.235 [http-nio-8080-exec-5] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 12:42:26.692 [http-nio-8080-exec-6] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 12:42:26.693 [http-nio-8080-exec-6] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 12:42:26.693 [http-nio-8080-exec-6] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 12:42:34.164 [http-nio-8080-exec-8] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 12:42:34.165 [http-nio-8080-exec-8] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 12:42:34.165 [http-nio-8080-exec-8] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 12:43:10.174 [http-nio-8080-exec-10] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/ (path: /)
+2026-02-20 12:43:10.175 [http-nio-8080-exec-10] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /
+2026-02-20 12:43:16.432 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 12:43:16.432 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 12:43:16.432 [http-nio-8080-exec-1] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 12:43:21.823 [http-nio-8080-exec-2] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/ (path: /)
+2026-02-20 12:43:21.824 [http-nio-8080-exec-2] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /
+2026-02-20 12:43:24.849 [http-nio-8080-exec-3] INFO  c.h.service.impl.PaymentServiceImpl - PaymentService initialized with default adapter: POS_ADAPTER
+2026-02-20 12:43:24.852 [http-nio-8080-exec-3] INFO  c.h.servlet.ReservationServlet - ReservationServlet initialized
+2026-02-20 12:43:24.852 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/search (path: /reservation/search)
+2026-02-20 12:43:24.852 [http-nio-8080-exec-3] WARN  c.hotelreservation.filter.AuthFilter - Invalid session attributes for URL: /reservation/search
+2026-02-20 12:43:24.853 [http-nio-8080-exec-3] INFO  c.hotelreservation.filter.AuthFilter - Redirecting to login: Session invalid. Please login again.
+2026-02-20 12:43:24.866 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 12:43:24.867 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 12:43:24.867 [http-nio-8080-exec-4] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 12:43:27.175 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/ (path: /)
+2026-02-20 12:43:27.175 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /
+2026-02-20 13:33:30.776 [main] INFO  c.hotelreservation.filter.AuthFilter - AuthFilter initialized
+2026-02-20 13:34:12.864 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/ (path: /)
+2026-02-20 13:34:12.866 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /
+2026-02-20 13:34:13.073 [http-nio-8080-exec-2] INFO  c.h.servlet.LoginServlet - LoginServlet initialized
+2026-02-20 13:34:13.074 [http-nio-8080-exec-2] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 13:34:13.074 [http-nio-8080-exec-2] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 13:34:13.074 [http-nio-8080-exec-2] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 13:34:27.790 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/ (path: /)
+2026-02-20 13:34:27.791 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /
+2026-02-20 13:34:27.803 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 13:34:27.804 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 13:34:27.804 [http-nio-8080-exec-4] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 13:34:37.820 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 13:34:37.820 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 13:34:37.820 [http-nio-8080-exec-5] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 13:34:46.782 [http-nio-8080-exec-6] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/login (path: /login)
+2026-02-20 13:34:46.783 [http-nio-8080-exec-6] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 13:34:46.784 [http-nio-8080-exec-6] INFO  c.h.servlet.LoginServlet - POST /login - Login attempt for user: admin
+2026-02-20 13:34:46.786 [http-nio-8080-exec-6] INFO  c.h.persistence.DatabaseConnection - Configuration loaded from application.properties
+2026-02-20 13:34:46.796 [http-nio-8080-exec-6] INFO  c.h.persistence.DatabaseConnection - Initializing HikariCP with URL: jdbc:mysql://localhost:3306/hotel_reservation, user: root
+2026-02-20 13:34:46.810 [http-nio-8080-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-20 13:34:47.947 [http-nio-8080-exec-6] ERROR com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Exception during pool initialization.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.hotelreservation.persistence.DatabaseConnection.initializeDataSource(DatabaseConnection.java:96)
+	at com.hotelreservation.persistence.DatabaseConnection.<init>(DatabaseConnection.java:32)
+	at com.hotelreservation.persistence.DatabaseConnection.getInstance(DatabaseConnection.java:43)
+	at com.hotelreservation.repository.impl.UserDAOImpl.findByUsername(UserDAOImpl.java:29)
+	at com.hotelreservation.service.impl.UserServiceImpl.authenticate(UserServiceImpl.java:38)
+	at com.hotelreservation.controller.SystemController.login(SystemController.java:36)
+	at com.hotelreservation.servlet.LoginServlet.doPost(LoginServlet.java:91)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.hotelreservation.filter.AuthFilter.doFilter(AuthFilter.java:69)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
+	... 41 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:694)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 44 common frames omitted
+2026-02-20 13:34:47.952 [http-nio-8080-exec-6] ERROR c.h.persistence.DatabaseConnection - Failed to initialize connection pool: Failed to initialize pool: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:596)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:582)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.hotelreservation.persistence.DatabaseConnection.initializeDataSource(DatabaseConnection.java:96)
+	at com.hotelreservation.persistence.DatabaseConnection.<init>(DatabaseConnection.java:32)
+	at com.hotelreservation.persistence.DatabaseConnection.getInstance(DatabaseConnection.java:43)
+	at com.hotelreservation.repository.impl.UserDAOImpl.findByUsername(UserDAOImpl.java:29)
+	at com.hotelreservation.service.impl.UserServiceImpl.authenticate(UserServiceImpl.java:38)
+	at com.hotelreservation.controller.SystemController.login(SystemController.java:36)
+	at com.hotelreservation.servlet.LoginServlet.doPost(LoginServlet.java:91)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.hotelreservation.filter.AuthFilter.doFilter(AuthFilter.java:69)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	... 33 common frames omitted
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
+	... 41 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:694)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 44 common frames omitted
+2026-02-20 13:34:47.953 [http-nio-8080-exec-6] ERROR c.h.service.impl.UserServiceImpl - Error during authentication
+java.lang.RuntimeException: Connection pool initialization failed
+	at com.hotelreservation.persistence.DatabaseConnection.initializeDataSource(DatabaseConnection.java:100)
+	at com.hotelreservation.persistence.DatabaseConnection.<init>(DatabaseConnection.java:32)
+	at com.hotelreservation.persistence.DatabaseConnection.getInstance(DatabaseConnection.java:43)
+	at com.hotelreservation.repository.impl.UserDAOImpl.findByUsername(UserDAOImpl.java:29)
+	at com.hotelreservation.service.impl.UserServiceImpl.authenticate(UserServiceImpl.java:38)
+	at com.hotelreservation.controller.SystemController.login(SystemController.java:36)
+	at com.hotelreservation.servlet.LoginServlet.doPost(LoginServlet.java:91)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.hotelreservation.filter.AuthFilter.doFilter(AuthFilter.java:69)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:596)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:582)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.hotelreservation.persistence.DatabaseConnection.initializeDataSource(DatabaseConnection.java:96)
+	... 30 common frames omitted
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	... 33 common frames omitted
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
+	... 41 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:694)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
+	... 44 common frames omitted
+2026-02-20 13:34:47.954 [http-nio-8080-exec-6] WARN  c.h.controller.SystemController - Failed login attempt for user: admin
+2026-02-20 13:34:47.955 [http-nio-8080-exec-6] WARN  c.h.servlet.LoginServlet - Failed login attempt for user: admin
+2026-02-20 13:56:59.029 [main] INFO  c.hotelreservation.filter.AuthFilter - AuthFilter destroyed
+2026-02-20 13:57:03.638 [main] INFO  c.hotelreservation.filter.AuthFilter - AuthFilter initialized
+2026-02-20 13:57:22.849 [http-nio-8080-exec-1] INFO  c.h.servlet.LoginServlet - LoginServlet initialized
+2026-02-20 13:57:22.852 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 13:57:22.860 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 13:57:22.861 [http-nio-8080-exec-1] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 13:57:39.254 [http-nio-8080-exec-2] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 13:57:39.254 [http-nio-8080-exec-2] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 13:57:39.255 [http-nio-8080-exec-2] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 13:58:00.008 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/login (path: /login)
+2026-02-20 13:58:00.008 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 13:58:00.010 [http-nio-8080-exec-3] INFO  c.h.servlet.LoginServlet - POST /login - Login attempt for user: admin
+2026-02-20 13:58:00.013 [http-nio-8080-exec-3] INFO  c.h.persistence.DatabaseConnection - Configuration loaded from application.properties
+2026-02-20 13:58:00.022 [http-nio-8080-exec-3] INFO  c.h.persistence.DatabaseConnection - Initializing HikariCP with URL: jdbc:mysql://localhost:3306/hotel_reservation, user: root
+2026-02-20 13:58:00.032 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-20 13:58:00.554 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1566705b
+2026-02-20 13:58:00.557 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-20 13:58:00.557 [http-nio-8080-exec-3] INFO  c.h.persistence.DatabaseConnection - HikariCP connection pool initialized successfully
+2026-02-20 13:58:00.557 [http-nio-8080-exec-3] INFO  c.h.persistence.DatabaseConnection - DatabaseConnection singleton initialized
+2026-02-20 13:58:00.572 [http-nio-8080-exec-3] DEBUG c.h.repository.impl.UserDAOImpl - Found user: admin
+2026-02-20 13:58:00.967 [http-nio-8080-exec-3] INFO  c.h.service.impl.UserServiceImpl - User authenticated successfully: admin (role: ADMIN)
+2026-02-20 13:58:00.969 [http-nio-8080-exec-3] INFO  c.h.controller.SystemController - Successful login for user: admin (role: ADMIN)
+2026-02-20 13:58:00.970 [http-nio-8080-exec-3] INFO  c.h.servlet.LoginServlet - Successful login for user: admin (role: ADMIN)
+2026-02-20 13:58:00.972 [http-nio-8080-exec-3] DEBUG c.h.servlet.LoginServlet - Session created for user: admin with role: ADMIN
+2026-02-20 13:58:29.813 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/login (path: /login)
+2026-02-20 13:58:29.813 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 13:58:29.813 [http-nio-8080-exec-4] INFO  c.h.servlet.LoginServlet - POST /login - Login attempt for user: receptionist
+2026-02-20 13:58:29.816 [http-nio-8080-exec-4] DEBUG c.h.repository.impl.UserDAOImpl - Found user: receptionist
+2026-02-20 13:58:30.247 [http-nio-8080-exec-4] INFO  c.h.service.impl.UserServiceImpl - User authenticated successfully: receptionist (role: RECEPTIONIST)
+2026-02-20 13:58:30.248 [http-nio-8080-exec-4] INFO  c.h.controller.SystemController - Successful login for user: receptionist (role: RECEPTIONIST)
+2026-02-20 13:58:30.248 [http-nio-8080-exec-4] INFO  c.h.servlet.LoginServlet - Successful login for user: receptionist (role: RECEPTIONIST)
+2026-02-20 13:58:30.248 [http-nio-8080-exec-4] DEBUG c.h.servlet.LoginServlet - Session created for user: receptionist with role: RECEPTIONIST
+2026-02-20 13:58:30.261 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/login (path: /login)
+2026-02-20 13:58:30.261 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 13:58:30.262 [http-nio-8080-exec-5] INFO  c.h.servlet.LoginServlet - POST /login - Login attempt for user: guest
+2026-02-20 13:58:30.264 [http-nio-8080-exec-5] DEBUG c.h.repository.impl.UserDAOImpl - Found user: guest
+2026-02-20 13:58:30.665 [http-nio-8080-exec-5] INFO  c.h.service.impl.UserServiceImpl - User authenticated successfully: guest (role: GUEST)
+2026-02-20 13:58:30.665 [http-nio-8080-exec-5] INFO  c.h.controller.SystemController - Successful login for user: guest (role: GUEST)
+2026-02-20 13:58:30.665 [http-nio-8080-exec-5] INFO  c.h.servlet.LoginServlet - Successful login for user: guest (role: GUEST)
+2026-02-20 13:58:30.666 [http-nio-8080-exec-5] DEBUG c.h.servlet.LoginServlet - Session created for user: guest with role: GUEST
+2026-02-20 13:58:30.679 [http-nio-8080-exec-6] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/login (path: /login)
+2026-02-20 13:58:30.679 [http-nio-8080-exec-6] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 13:58:30.680 [http-nio-8080-exec-6] INFO  c.h.servlet.LoginServlet - POST /login - Login attempt for user: maintenance
+2026-02-20 13:58:30.682 [http-nio-8080-exec-6] DEBUG c.h.repository.impl.UserDAOImpl - Found user: maintenance
+2026-02-20 13:58:31.080 [http-nio-8080-exec-6] INFO  c.h.service.impl.UserServiceImpl - User authenticated successfully: maintenance (role: MAINTENANCE)
+2026-02-20 13:58:31.080 [http-nio-8080-exec-6] INFO  c.h.controller.SystemController - Successful login for user: maintenance (role: MAINTENANCE)
+2026-02-20 13:58:31.080 [http-nio-8080-exec-6] INFO  c.h.servlet.LoginServlet - Successful login for user: maintenance (role: MAINTENANCE)
+2026-02-20 13:58:31.081 [http-nio-8080-exec-6] DEBUG c.h.servlet.LoginServlet - Session created for user: maintenance with role: MAINTENANCE
+2026-02-20 14:03:26.413 [http-nio-8080-exec-7] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 14:03:26.414 [http-nio-8080-exec-7] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 14:03:26.414 [http-nio-8080-exec-7] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 14:03:36.739 [http-nio-8080-exec-9] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/login (path: /login)
+2026-02-20 14:03:36.740 [http-nio-8080-exec-9] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 14:03:36.741 [http-nio-8080-exec-9] INFO  c.h.servlet.LoginServlet - POST /login - Login attempt for user: admin
+2026-02-20 14:03:36.745 [http-nio-8080-exec-9] DEBUG c.h.repository.impl.UserDAOImpl - Found user: admin
+2026-02-20 14:03:37.174 [http-nio-8080-exec-9] INFO  c.h.service.impl.UserServiceImpl - User authenticated successfully: admin (role: ADMIN)
+2026-02-20 14:03:37.174 [http-nio-8080-exec-9] INFO  c.h.controller.SystemController - Successful login for user: admin (role: ADMIN)
+2026-02-20 14:03:37.175 [http-nio-8080-exec-9] INFO  c.h.servlet.LoginServlet - Successful login for user: admin (role: ADMIN)
+2026-02-20 14:03:37.175 [http-nio-8080-exec-9] DEBUG c.h.servlet.LoginServlet - Session created for user: admin with role: ADMIN
+2026-02-20 14:03:37.194 [http-nio-8080-exec-10] INFO  c.h.service.impl.PaymentServiceImpl - PaymentService initialized with default adapter: POS_ADAPTER
+2026-02-20 14:03:37.199 [http-nio-8080-exec-10] INFO  c.h.servlet.AdminServlet - AdminServlet initialized
+2026-02-20 14:03:37.200 [http-nio-8080-exec-10] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/admin/dashboard (path: /admin/dashboard)
+2026-02-20 14:03:37.200 [http-nio-8080-exec-10] DEBUG c.hotelreservation.filter.AuthFilter - User 1 (role: ADMIN) accessing: /admin/dashboard
+2026-02-20 14:03:37.201 [http-nio-8080-exec-10] DEBUG c.h.servlet.AdminServlet - GET /admin/dashboard - Handling request
+2026-02-20 14:03:37.201 [http-nio-8080-exec-10] DEBUG c.h.servlet.AdminServlet - Displaying admin dashboard
+2026-02-20 14:03:48.060 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/admin/staff (path: /admin/staff)
+2026-02-20 14:03:48.060 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - User 1 (role: ADMIN) accessing: /admin/staff
+2026-02-20 14:03:48.060 [http-nio-8080-exec-3] DEBUG c.h.servlet.AdminServlet - GET /admin/staff - Handling request
+2026-02-20 14:03:48.060 [http-nio-8080-exec-3] DEBUG c.h.servlet.AdminServlet - Displaying staff creation form
+2026-02-20 14:03:52.020 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/admin/dashboard (path: /admin/dashboard)
+2026-02-20 14:03:52.020 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - User 1 (role: ADMIN) accessing: /admin/dashboard
+2026-02-20 14:03:52.020 [http-nio-8080-exec-5] DEBUG c.h.servlet.AdminServlet - GET /admin/dashboard - Handling request
+2026-02-20 14:03:52.020 [http-nio-8080-exec-5] DEBUG c.h.servlet.AdminServlet - Displaying admin dashboard
+2026-02-20 14:03:53.458 [http-nio-8080-exec-7] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/admin/reports (path: /admin/reports)
+2026-02-20 14:03:53.458 [http-nio-8080-exec-7] DEBUG c.hotelreservation.filter.AuthFilter - User 1 (role: ADMIN) accessing: /admin/reports
+2026-02-20 14:03:53.458 [http-nio-8080-exec-7] DEBUG c.h.servlet.AdminServlet - GET /admin/reports - Handling request
+2026-02-20 14:03:53.458 [http-nio-8080-exec-7] DEBUG c.h.servlet.AdminServlet - Displaying reports page
+2026-02-20 14:03:57.813 [http-nio-8080-exec-9] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/admin/dashboard (path: /admin/dashboard)
+2026-02-20 14:03:57.813 [http-nio-8080-exec-9] DEBUG c.hotelreservation.filter.AuthFilter - User 1 (role: ADMIN) accessing: /admin/dashboard
+2026-02-20 14:03:57.814 [http-nio-8080-exec-9] DEBUG c.h.servlet.AdminServlet - GET /admin/dashboard - Handling request
+2026-02-20 14:03:57.814 [http-nio-8080-exec-9] DEBUG c.h.servlet.AdminServlet - Displaying admin dashboard
+2026-02-20 14:03:59.167 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/admin/maintenance (path: /admin/maintenance)
+2026-02-20 14:03:59.168 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - User 1 (role: ADMIN) accessing: /admin/maintenance
+2026-02-20 14:03:59.168 [http-nio-8080-exec-1] DEBUG c.h.servlet.AdminServlet - GET /admin/maintenance - Handling request
+2026-02-20 14:03:59.168 [http-nio-8080-exec-1] DEBUG c.h.servlet.AdminServlet - Displaying maintenance management form
+2026-02-20 14:04:04.184 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/admin/dashboard (path: /admin/dashboard)
+2026-02-20 14:04:04.185 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - User 1 (role: ADMIN) accessing: /admin/dashboard
+2026-02-20 14:04:04.185 [http-nio-8080-exec-3] DEBUG c.h.servlet.AdminServlet - GET /admin/dashboard - Handling request
+2026-02-20 14:04:04.185 [http-nio-8080-exec-3] DEBUG c.h.servlet.AdminServlet - Displaying admin dashboard
+2026-02-20 14:04:06.654 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/admin/payment-config (path: /admin/payment-config)
+2026-02-20 14:04:06.655 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - User 1 (role: ADMIN) accessing: /admin/payment-config
+2026-02-20 14:04:06.655 [http-nio-8080-exec-5] DEBUG c.h.servlet.AdminServlet - GET /admin/payment-config - Handling request
+2026-02-20 14:04:06.655 [http-nio-8080-exec-5] DEBUG c.h.servlet.AdminServlet - Displaying payment configuration form
+2026-02-20 14:04:11.079 [http-nio-8080-exec-8] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/admin/payment-config (path: /admin/payment-config)
+2026-02-20 14:04:11.080 [http-nio-8080-exec-8] DEBUG c.hotelreservation.filter.AuthFilter - User 1 (role: ADMIN) accessing: /admin/payment-config
+2026-02-20 14:04:11.080 [http-nio-8080-exec-8] DEBUG c.h.servlet.AdminServlet - POST /admin/payment-config - Processing request
+2026-02-20 14:04:11.080 [http-nio-8080-exec-8] INFO  c.h.servlet.AdminServlet - Configuring payment adapter: POS
+2026-02-20 14:04:11.080 [http-nio-8080-exec-8] INFO  c.h.controller.AdminController - Switched payment adapter to: POS
+2026-02-20 14:04:11.080 [http-nio-8080-exec-8] INFO  c.h.service.impl.PaymentServiceImpl - Payment adapter switched to: POS_ADAPTER
+2026-02-20 14:04:11.080 [http-nio-8080-exec-8] INFO  c.h.controller.AdminController - Payment adapter configured: POS
+2026-02-20 14:04:16.067 [http-nio-8080-exec-10] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/admin/dashboard (path: /admin/dashboard)
+2026-02-20 14:04:16.068 [http-nio-8080-exec-10] DEBUG c.hotelreservation.filter.AuthFilter - User 1 (role: ADMIN) accessing: /admin/dashboard
+2026-02-20 14:04:16.068 [http-nio-8080-exec-10] DEBUG c.h.servlet.AdminServlet - GET /admin/dashboard - Handling request
+2026-02-20 14:04:16.068 [http-nio-8080-exec-10] DEBUG c.h.servlet.AdminServlet - Displaying admin dashboard
+2026-02-20 14:04:28.509 [http-nio-8080-exec-2] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 14:04:28.510 [http-nio-8080-exec-2] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 14:04:28.510 [http-nio-8080-exec-2] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 14:04:28.510 [http-nio-8080-exec-2] INFO  c.h.servlet.LoginServlet - User already logged in, redirecting to: /projectweb/admin/dashboard
+2026-02-20 14:04:28.521 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/admin/dashboard (path: /admin/dashboard)
+2026-02-20 14:04:28.521 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - User 1 (role: ADMIN) accessing: /admin/dashboard
+2026-02-20 14:04:28.521 [http-nio-8080-exec-3] DEBUG c.h.servlet.AdminServlet - GET /admin/dashboard - Handling request
+2026-02-20 14:04:28.521 [http-nio-8080-exec-3] DEBUG c.h.servlet.AdminServlet - Displaying admin dashboard
+2026-02-20 14:04:31.641 [http-nio-8080-exec-6] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 14:04:31.641 [http-nio-8080-exec-6] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 14:04:31.642 [http-nio-8080-exec-6] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 14:04:31.642 [http-nio-8080-exec-6] INFO  c.h.servlet.LoginServlet - User already logged in, redirecting to: /projectweb/admin/dashboard
+2026-02-20 14:04:31.662 [http-nio-8080-exec-7] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/admin/dashboard (path: /admin/dashboard)
+2026-02-20 14:04:31.663 [http-nio-8080-exec-7] DEBUG c.hotelreservation.filter.AuthFilter - User 1 (role: ADMIN) accessing: /admin/dashboard
+2026-02-20 14:04:31.663 [http-nio-8080-exec-7] DEBUG c.h.servlet.AdminServlet - GET /admin/dashboard - Handling request
+2026-02-20 14:04:31.663 [http-nio-8080-exec-7] DEBUG c.h.servlet.AdminServlet - Displaying admin dashboard
+2026-02-20 14:04:33.586 [http-nio-8080-exec-9] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 14:04:33.586 [http-nio-8080-exec-9] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 14:04:33.587 [http-nio-8080-exec-9] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 14:04:33.587 [http-nio-8080-exec-9] INFO  c.h.servlet.LoginServlet - User already logged in, redirecting to: /projectweb/admin/dashboard
+2026-02-20 14:04:33.597 [http-nio-8080-exec-10] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/admin/dashboard (path: /admin/dashboard)
+2026-02-20 14:04:33.597 [http-nio-8080-exec-10] DEBUG c.hotelreservation.filter.AuthFilter - User 1 (role: ADMIN) accessing: /admin/dashboard
+2026-02-20 14:04:33.597 [http-nio-8080-exec-10] DEBUG c.h.servlet.AdminServlet - GET /admin/dashboard - Handling request
+2026-02-20 14:04:33.597 [http-nio-8080-exec-10] DEBUG c.h.servlet.AdminServlet - Displaying admin dashboard
+2026-02-20 14:04:37.525 [http-nio-8080-exec-2] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/admin/dashboard (path: /admin/dashboard)
+2026-02-20 14:04:37.526 [http-nio-8080-exec-2] DEBUG c.hotelreservation.filter.AuthFilter - User 1 (role: ADMIN) accessing: /admin/dashboard
+2026-02-20 14:04:37.526 [http-nio-8080-exec-2] DEBUG c.h.servlet.AdminServlet - GET /admin/dashboard - Handling request
+2026-02-20 14:04:37.526 [http-nio-8080-exec-2] DEBUG c.h.servlet.AdminServlet - Displaying admin dashboard
+2026-02-20 14:04:43.844 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 14:04:43.845 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 14:04:43.845 [http-nio-8080-exec-4] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 14:04:43.845 [http-nio-8080-exec-4] INFO  c.h.servlet.LoginServlet - User already logged in, redirecting to: /projectweb/admin/dashboard
+2026-02-20 14:04:43.854 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/admin/dashboard (path: /admin/dashboard)
+2026-02-20 14:04:43.854 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - User 1 (role: ADMIN) accessing: /admin/dashboard
+2026-02-20 14:04:43.854 [http-nio-8080-exec-5] DEBUG c.h.servlet.AdminServlet - GET /admin/dashboard - Handling request
+2026-02-20 14:04:43.854 [http-nio-8080-exec-5] DEBUG c.h.servlet.AdminServlet - Displaying admin dashboard
+2026-02-20 14:05:34.584 [http-nio-8080-exec-9] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/admin/payment-config (path: /admin/payment-config)
+2026-02-20 14:05:34.584 [http-nio-8080-exec-9] DEBUG c.hotelreservation.filter.AuthFilter - User 1 (role: ADMIN) accessing: /admin/payment-config
+2026-02-20 14:05:34.584 [http-nio-8080-exec-9] DEBUG c.h.servlet.AdminServlet - GET /admin/payment-config - Handling request
+2026-02-20 14:05:34.584 [http-nio-8080-exec-9] DEBUG c.h.servlet.AdminServlet - Displaying payment configuration form
+2026-02-20 14:05:38.542 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/admin/payment-config (path: /admin/payment-config)
+2026-02-20 14:05:38.542 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - User 1 (role: ADMIN) accessing: /admin/payment-config
+2026-02-20 14:05:38.542 [http-nio-8080-exec-1] DEBUG c.h.servlet.AdminServlet - POST /admin/payment-config - Processing request
+2026-02-20 14:05:38.542 [http-nio-8080-exec-1] INFO  c.h.servlet.AdminServlet - Configuring payment adapter: ONLINE_GATEWAY
+2026-02-20 14:05:38.544 [http-nio-8080-exec-1] INFO  c.h.controller.AdminController - Switched payment adapter to: ONLINE_GATEWAY
+2026-02-20 14:05:38.544 [http-nio-8080-exec-1] INFO  c.h.service.impl.PaymentServiceImpl - Payment adapter switched to: ONLINE_GATEWAY_ADAPTER
+2026-02-20 14:05:38.544 [http-nio-8080-exec-1] INFO  c.h.controller.AdminController - Payment adapter configured: ONLINE_GATEWAY
+2026-02-20 14:05:42.390 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/admin/dashboard (path: /admin/dashboard)
+2026-02-20 14:05:42.390 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - User 1 (role: ADMIN) accessing: /admin/dashboard
+2026-02-20 14:05:42.390 [http-nio-8080-exec-3] DEBUG c.h.servlet.AdminServlet - GET /admin/dashboard - Handling request
+2026-02-20 14:05:42.391 [http-nio-8080-exec-3] DEBUG c.h.servlet.AdminServlet - Displaying admin dashboard
+2026-02-20 14:08:37.991 [main] INFO  c.hotelreservation.filter.AuthFilter - AuthFilter destroyed
+2026-02-20 14:08:42.501 [main] INFO  c.hotelreservation.filter.AuthFilter - AuthFilter initialized
+2026-02-20 14:09:11.226 [http-nio-8080-exec-1] INFO  c.h.servlet.LoginServlet - LoginServlet initialized
+2026-02-20 14:09:11.230 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/login (path: /login)
+2026-02-20 14:09:11.231 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 14:09:11.233 [http-nio-8080-exec-1] INFO  c.h.servlet.LoginServlet - POST /login - Login attempt for user: admin
+2026-02-20 14:09:11.234 [http-nio-8080-exec-1] INFO  c.h.persistence.DatabaseConnection - Configuration loaded from application.properties
+2026-02-20 14:09:11.241 [http-nio-8080-exec-1] INFO  c.h.persistence.DatabaseConnection - Initializing HikariCP with URL: jdbc:mysql://localhost:3306/hotel_reservation, user: root
+2026-02-20 14:09:11.251 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-20 14:09:11.675 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4ba23aaa
+2026-02-20 14:09:11.677 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-20 14:09:11.678 [http-nio-8080-exec-1] INFO  c.h.persistence.DatabaseConnection - HikariCP connection pool initialized successfully
+2026-02-20 14:09:11.678 [http-nio-8080-exec-1] INFO  c.h.persistence.DatabaseConnection - DatabaseConnection singleton initialized
+2026-02-20 14:09:11.691 [http-nio-8080-exec-1] DEBUG c.h.repository.impl.UserDAOImpl - Found user: admin
+2026-02-20 14:09:12.100 [http-nio-8080-exec-1] INFO  c.h.service.impl.UserServiceImpl - User authenticated successfully: admin (role: ADMIN)
+2026-02-20 14:09:12.101 [http-nio-8080-exec-1] INFO  c.h.controller.SystemController - Successful login for user: admin (role: ADMIN)
+2026-02-20 14:09:12.102 [http-nio-8080-exec-1] INFO  c.h.servlet.LoginServlet - Successful login for user: admin (role: ADMIN)
+2026-02-20 14:09:12.107 [http-nio-8080-exec-1] DEBUG c.h.servlet.LoginServlet - Session created for user: admin with role: ADMIN
+2026-02-20 14:09:12.131 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/logout (path: /logout)
+2026-02-20 14:09:12.131 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /logout
+2026-02-20 14:09:12.131 [http-nio-8080-exec-3] INFO  c.h.servlet.LogoutServlet - User logging out: admin
+2026-02-20 14:09:12.146 [http-nio-8080-exec-4] INFO  c.h.service.impl.PaymentServiceImpl - PaymentService initialized with default adapter: POS_ADAPTER
+2026-02-20 14:09:12.150 [http-nio-8080-exec-4] INFO  c.h.servlet.AdminServlet - AdminServlet initialized
+2026-02-20 14:09:12.151 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/admin/dashboard (path: /admin/dashboard)
+2026-02-20 14:09:12.151 [http-nio-8080-exec-4] WARN  c.hotelreservation.filter.AuthFilter - No session found for protected URL: /admin/dashboard
+2026-02-20 14:09:12.151 [http-nio-8080-exec-4] INFO  c.hotelreservation.filter.AuthFilter - Redirecting to login: Session expired. Please login again.
+2026-02-20 14:09:54.267 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/logout (path: /logout)
+2026-02-20 14:09:54.268 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /logout
+2026-02-20 14:10:15.862 [http-nio-8080-exec-6] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/login (path: /login)
+2026-02-20 14:10:15.862 [http-nio-8080-exec-6] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 14:10:15.863 [http-nio-8080-exec-6] INFO  c.h.servlet.LoginServlet - POST /login - Login attempt for user: admin
+2026-02-20 14:10:15.865 [http-nio-8080-exec-6] DEBUG c.h.repository.impl.UserDAOImpl - Found user: admin
+2026-02-20 14:10:16.253 [http-nio-8080-exec-6] INFO  c.h.service.impl.UserServiceImpl - User authenticated successfully: admin (role: ADMIN)
+2026-02-20 14:10:16.253 [http-nio-8080-exec-6] INFO  c.h.controller.SystemController - Successful login for user: admin (role: ADMIN)
+2026-02-20 14:10:16.253 [http-nio-8080-exec-6] INFO  c.h.servlet.LoginServlet - Successful login for user: admin (role: ADMIN)
+2026-02-20 14:10:16.254 [http-nio-8080-exec-6] DEBUG c.h.servlet.LoginServlet - Session created for user: admin with role: ADMIN
+2026-02-20 14:10:16.269 [http-nio-8080-exec-8] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/logout (path: /logout)
+2026-02-20 14:10:16.269 [http-nio-8080-exec-8] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /logout
+2026-02-20 14:10:16.269 [http-nio-8080-exec-8] INFO  c.h.servlet.LogoutServlet - User logging out: admin
+2026-02-20 14:10:16.283 [http-nio-8080-exec-10] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/admin/dashboard (path: /admin/dashboard)
+2026-02-20 14:10:16.283 [http-nio-8080-exec-10] WARN  c.hotelreservation.filter.AuthFilter - No session found for protected URL: /admin/dashboard
+2026-02-20 14:10:16.283 [http-nio-8080-exec-10] INFO  c.hotelreservation.filter.AuthFilter - Redirecting to login: Session expired. Please login again.
+2026-02-20 14:11:01.973 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 14:11:01.973 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 14:11:01.973 [http-nio-8080-exec-1] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 14:11:16.260 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/login (path: /login)
+2026-02-20 14:11:16.261 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 14:11:16.261 [http-nio-8080-exec-3] INFO  c.h.servlet.LoginServlet - POST /login - Login attempt for user: guest
+2026-02-20 14:11:16.265 [http-nio-8080-exec-3] DEBUG c.h.repository.impl.UserDAOImpl - Found user: guest
+2026-02-20 14:11:16.672 [http-nio-8080-exec-3] INFO  c.h.service.impl.UserServiceImpl - User authenticated successfully: guest (role: GUEST)
+2026-02-20 14:11:16.673 [http-nio-8080-exec-3] INFO  c.h.controller.SystemController - Successful login for user: guest (role: GUEST)
+2026-02-20 14:11:16.673 [http-nio-8080-exec-3] INFO  c.h.servlet.LoginServlet - Successful login for user: guest (role: GUEST)
+2026-02-20 14:11:16.673 [http-nio-8080-exec-3] DEBUG c.h.servlet.LoginServlet - Session created for user: guest with role: GUEST
+2026-02-20 14:11:16.686 [http-nio-8080-exec-4] INFO  c.h.service.impl.PaymentServiceImpl - PaymentService initialized with default adapter: POS_ADAPTER
+2026-02-20 14:11:16.687 [http-nio-8080-exec-4] INFO  c.h.servlet.ReservationServlet - ReservationServlet initialized
+2026-02-20 14:11:16.687 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/search (path: /reservation/search)
+2026-02-20 14:11:16.687 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/search
+2026-02-20 14:11:16.687 [http-nio-8080-exec-4] DEBUG c.h.servlet.ReservationServlet - GET /reservation/search - Handling request
+2026-02-20 14:11:16.687 [http-nio-8080-exec-4] DEBUG c.h.servlet.ReservationServlet - Displaying room search form
+2026-02-20 14:11:33.640 [http-nio-8080-exec-7] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/reservation/search (path: /reservation/search)
+2026-02-20 14:11:33.641 [http-nio-8080-exec-7] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/search
+2026-02-20 14:11:33.641 [http-nio-8080-exec-7] DEBUG c.h.servlet.ReservationServlet - POST /reservation/search - Processing request
+2026-02-20 14:11:33.642 [http-nio-8080-exec-7] INFO  c.h.servlet.ReservationServlet - Searching rooms for dates: 2026-02-20 to 2026-02-21
+2026-02-20 14:11:33.666 [http-nio-8080-exec-7] DEBUG c.h.service.impl.RoomServiceImpl - Retrieved 8 available rooms for dates: 2026-02-20 to 2026-02-21
+2026-02-20 14:11:33.668 [http-nio-8080-exec-7] INFO  c.h.controller.ReservationController - Room search performed: 8 rooms available for 2026-02-20 to 2026-02-21
+2026-02-20 14:11:55.584 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/reservation/create (path: /reservation/create)
+2026-02-20 14:11:55.585 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/create
+2026-02-20 14:11:55.585 [http-nio-8080-exec-1] DEBUG c.h.servlet.ReservationServlet - POST /reservation/create - Processing request
+2026-02-20 14:11:55.587 [http-nio-8080-exec-1] INFO  c.h.servlet.ReservationServlet - Creating reservation for guest: pavindya methsara kankanamge, room: 8, dates: 2026-02-20 to 2026-02-21
+2026-02-20 14:11:55.587 [http-nio-8080-exec-1] INFO  c.h.service.impl.BookingService - Starting online reservation for guest: pavindya methsara kankanamge, Room: 8
+2026-02-20 14:11:55.595 [http-nio-8080-exec-1] DEBUG c.h.service.impl.RoomServiceImpl - Retrieved room by ID: 8
+2026-02-20 14:11:55.597 [http-nio-8080-exec-1] ERROR c.h.service.impl.BookingService - Error during online reservation
+java.lang.NullPointerException: Cannot invoke "com.hotelreservation.service.impl.OnlineResService.setReservationDates(java.time.LocalDate, java.time.LocalDate)" because "this.onlineResService" is null
+	at com.hotelreservation.service.impl.BookingService.makeOnlineReservation(BookingService.java:75)
+	at com.hotelreservation.controller.ReservationController.makeReservation(ReservationController.java:75)
+	at com.hotelreservation.servlet.ReservationServlet.handleReservationCreate(ReservationServlet.java:169)
+	at com.hotelreservation.servlet.ReservationServlet.doPost(ReservationServlet.java:102)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.hotelreservation.filter.AuthFilter.doFilter(AuthFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-20 14:11:55.601 [http-nio-8080-exec-1] ERROR c.h.controller.ReservationController - Error creating reservation
+java.lang.NullPointerException: Cannot invoke "com.hotelreservation.service.impl.OnlineResService.setReservationDates(java.time.LocalDate, java.time.LocalDate)" because "this.onlineResService" is null
+	at com.hotelreservation.service.impl.BookingService.makeOnlineReservation(BookingService.java:75)
+	at com.hotelreservation.controller.ReservationController.makeReservation(ReservationController.java:75)
+	at com.hotelreservation.servlet.ReservationServlet.handleReservationCreate(ReservationServlet.java:169)
+	at com.hotelreservation.servlet.ReservationServlet.doPost(ReservationServlet.java:102)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.hotelreservation.filter.AuthFilter.doFilter(AuthFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-20 14:21:47.988 [main] INFO  c.hotelreservation.filter.AuthFilter - AuthFilter destroyed
+2026-02-20 14:21:52.625 [main] INFO  c.hotelreservation.filter.AuthFilter - AuthFilter initialized
+2026-02-20 14:31:07.957 [http-nio-8080-exec-1] INFO  c.h.servlet.LoginServlet - LoginServlet initialized
+2026-02-20 14:31:07.965 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/login (path: /login)
+2026-02-20 14:31:07.967 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 14:31:07.969 [http-nio-8080-exec-1] INFO  c.h.servlet.LoginServlet - POST /login - Login attempt for user: guest
+2026-02-20 14:31:07.970 [http-nio-8080-exec-1] INFO  c.h.persistence.DatabaseConnection - Configuration loaded from application.properties
+2026-02-20 14:31:07.977 [http-nio-8080-exec-1] INFO  c.h.persistence.DatabaseConnection - Initializing HikariCP with URL: jdbc:mysql://localhost:3306/hotel_reservation, user: root
+2026-02-20 14:31:07.988 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-20 14:31:08.417 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a8e3a8a
+2026-02-20 14:31:08.420 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-20 14:31:08.420 [http-nio-8080-exec-1] INFO  c.h.persistence.DatabaseConnection - HikariCP connection pool initialized successfully
+2026-02-20 14:31:08.420 [http-nio-8080-exec-1] INFO  c.h.persistence.DatabaseConnection - DatabaseConnection singleton initialized
+2026-02-20 14:31:08.436 [http-nio-8080-exec-1] DEBUG c.h.repository.impl.UserDAOImpl - Found user: guest
+2026-02-20 14:31:08.841 [http-nio-8080-exec-1] INFO  c.h.service.impl.UserServiceImpl - User authenticated successfully: guest (role: GUEST)
+2026-02-20 14:31:08.844 [http-nio-8080-exec-1] INFO  c.h.controller.SystemController - Successful login for user: guest (role: GUEST)
+2026-02-20 14:31:08.844 [http-nio-8080-exec-1] INFO  c.h.servlet.LoginServlet - Successful login for user: guest (role: GUEST)
+2026-02-20 14:31:08.849 [http-nio-8080-exec-1] DEBUG c.h.servlet.LoginServlet - Session created for user: guest with role: GUEST
+2026-02-20 14:31:08.881 [http-nio-8080-exec-3] INFO  c.h.service.impl.PaymentServiceImpl - PaymentService initialized with default adapter: POS_ADAPTER
+2026-02-20 14:31:08.882 [http-nio-8080-exec-3] INFO  c.h.servlet.ReservationServlet - ReservationServlet initialized
+2026-02-20 14:31:08.882 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/reservation/create (path: /reservation/create)
+2026-02-20 14:31:08.882 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/create
+2026-02-20 14:31:08.882 [http-nio-8080-exec-3] DEBUG c.h.servlet.ReservationServlet - POST /reservation/create - Processing request
+2026-02-20 14:31:08.883 [http-nio-8080-exec-3] INFO  c.h.servlet.ReservationServlet - Creating reservation for guest: John Doe, room: 1, dates: 2026-03-01 to 2026-03-03
+2026-02-20 14:31:08.884 [http-nio-8080-exec-3] INFO  c.h.service.impl.BookingService - Starting online reservation for guest: John Doe, Room: 1
+2026-02-20 14:31:08.889 [http-nio-8080-exec-3] DEBUG c.h.service.impl.RoomServiceImpl - Retrieved room by ID: 1
+2026-02-20 14:31:08.893 [http-nio-8080-exec-3] INFO  c.h.service.impl.OnlineResService - Created online reservation: ONL_16d3e177
+2026-02-20 14:31:08.927 [http-nio-8080-exec-3] ERROR c.h.r.impl.ReservationDAOImpl - Error saving reservation: ONL_16d3e177
+java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`hotel_reservation`.`reservations`, CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`guest_id`) REFERENCES `guests` (`id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at com.hotelreservation.repository.impl.ReservationDAOImpl.save(ReservationDAOImpl.java:162)
+	at com.hotelreservation.service.ReservationService.processBooking(ReservationService.java:53)
+	at com.hotelreservation.service.impl.BookingService.makeOnlineReservation(BookingService.java:79)
+	at com.hotelreservation.controller.ReservationController.makeReservation(ReservationController.java:75)
+	at com.hotelreservation.servlet.ReservationServlet.handleReservationCreate(ReservationServlet.java:172)
+	at com.hotelreservation.servlet.ReservationServlet.doPost(ReservationServlet.java:105)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.hotelreservation.filter.AuthFilter.doFilter(AuthFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-20 14:31:08.930 [http-nio-8080-exec-3] INFO  c.h.service.impl.PaymentServiceImpl - Processing payment of 200.0 using POS_ADAPTER
+2026-02-20 14:31:08.930 [http-nio-8080-exec-3] INFO  c.h.adapter.POSAdapter - Processing POS payment for amount: 200.0
+2026-02-20 14:31:08.930 [http-nio-8080-exec-3] DEBUG c.h.a.POSAdapter$ExternalPOSSystem - POS Terminal: Authorizing amount: 200.0
+2026-02-20 14:31:08.930 [http-nio-8080-exec-3] INFO  c.h.adapter.POSAdapter - POS payment successful. Transaction ID: POS_1771578068930
+2026-02-20 14:31:08.930 [http-nio-8080-exec-3] INFO  c.h.service.impl.PaymentServiceImpl - Payment successful: POS Terminal | Transaction ID: POS_1771578068930
+2026-02-20 14:31:08.942 [http-nio-8080-exec-3] INFO  c.h.repository.impl.RoomDAOImpl - Room updated: 101
+2026-02-20 14:31:08.942 [http-nio-8080-exec-3] INFO  c.h.service.impl.RoomServiceImpl - Room 1 status updated to: RESERVED
+2026-02-20 14:31:08.942 [http-nio-8080-exec-3] INFO  c.h.service.impl.OnlineResService - Sending confirmation email to: john@test.com
+2026-02-20 14:31:08.942 [http-nio-8080-exec-3] INFO  c.h.service.impl.OnlineResService - Reservation ID: ONL_16d3e177, Amount: 200.0
+2026-02-20 14:31:08.943 [http-nio-8080-exec-3] INFO  c.h.r.impl.ReservationDAOImpl - Reservation updated: ONL_16d3e177
+2026-02-20 14:31:08.943 [http-nio-8080-exec-3] INFO  c.h.service.impl.BookingService - Online reservation completed successfully: ONL_16d3e177
+2026-02-20 14:31:08.944 [http-nio-8080-exec-3] INFO  c.h.controller.ReservationController - Online reservation created: ONL_16d3e177
+2026-02-20 14:31:44.703 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/reservation/create (path: /reservation/create)
+2026-02-20 14:31:44.703 [http-nio-8080-exec-4] WARN  c.hotelreservation.filter.AuthFilter - No session found for protected URL: /reservation/create
+2026-02-20 14:31:44.703 [http-nio-8080-exec-4] INFO  c.hotelreservation.filter.AuthFilter - Redirecting to login: Session expired. Please login again.
+2026-02-20 14:31:44.717 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 14:31:44.718 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 14:31:44.718 [http-nio-8080-exec-5] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 14:31:54.945 [http-nio-8080-exec-7] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/login (path: /login)
+2026-02-20 14:31:54.946 [http-nio-8080-exec-7] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 14:31:54.946 [http-nio-8080-exec-7] INFO  c.h.servlet.LoginServlet - POST /login - Login attempt for user: guest
+2026-02-20 14:31:54.950 [http-nio-8080-exec-7] DEBUG c.h.repository.impl.UserDAOImpl - Found user: guest
+2026-02-20 14:31:55.388 [http-nio-8080-exec-7] INFO  c.h.service.impl.UserServiceImpl - User authenticated successfully: guest (role: GUEST)
+2026-02-20 14:31:55.388 [http-nio-8080-exec-7] INFO  c.h.controller.SystemController - Successful login for user: guest (role: GUEST)
+2026-02-20 14:31:55.388 [http-nio-8080-exec-7] INFO  c.h.servlet.LoginServlet - Successful login for user: guest (role: GUEST)
+2026-02-20 14:31:55.388 [http-nio-8080-exec-7] DEBUG c.h.servlet.LoginServlet - Session created for user: guest with role: GUEST
+2026-02-20 14:31:55.409 [http-nio-8080-exec-8] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/search (path: /reservation/search)
+2026-02-20 14:31:55.409 [http-nio-8080-exec-8] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/search
+2026-02-20 14:31:55.409 [http-nio-8080-exec-8] DEBUG c.h.servlet.ReservationServlet - GET /reservation/search - Handling request
+2026-02-20 14:31:55.409 [http-nio-8080-exec-8] DEBUG c.h.servlet.ReservationServlet - Displaying room search form
+2026-02-20 14:31:57.786 [http-nio-8080-exec-10] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/list (path: /reservation/list)
+2026-02-20 14:31:57.787 [http-nio-8080-exec-10] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/list
+2026-02-20 14:31:57.787 [http-nio-8080-exec-10] DEBUG c.h.servlet.ReservationServlet - GET /reservation/list - Handling request
+2026-02-20 14:31:57.787 [http-nio-8080-exec-10] DEBUG c.h.servlet.ReservationServlet - Displaying user's reservations
+2026-02-20 14:32:09.209 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/ (path: /)
+2026-02-20 14:32:09.209 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /
+2026-02-20 14:32:15.508 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/search (path: /reservation/search)
+2026-02-20 14:32:15.509 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/search
+2026-02-20 14:32:15.509 [http-nio-8080-exec-5] DEBUG c.h.servlet.ReservationServlet - GET /reservation/search - Handling request
+2026-02-20 14:32:15.509 [http-nio-8080-exec-5] DEBUG c.h.servlet.ReservationServlet - Displaying room search form
+2026-02-20 14:32:18.573 [http-nio-8080-exec-7] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/list (path: /reservation/list)
+2026-02-20 14:32:18.574 [http-nio-8080-exec-7] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/list
+2026-02-20 14:32:18.574 [http-nio-8080-exec-7] DEBUG c.h.servlet.ReservationServlet - GET /reservation/list - Handling request
+2026-02-20 14:32:18.574 [http-nio-8080-exec-7] DEBUG c.h.servlet.ReservationServlet - Displaying user's reservations
+2026-02-20 14:32:31.036 [http-nio-8080-exec-10] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/cancel (path: /reservation/cancel)
+2026-02-20 14:32:31.037 [http-nio-8080-exec-10] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/cancel
+2026-02-20 14:32:31.037 [http-nio-8080-exec-10] DEBUG c.h.servlet.ReservationServlet - GET /reservation/cancel - Handling request
+2026-02-20 14:32:31.037 [http-nio-8080-exec-10] DEBUG c.h.servlet.ReservationServlet - Displaying cancellation form for reservation: 1
+2026-02-20 15:20:22.563 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/search (path: /reservation/search)
+2026-02-20 15:20:22.563 [http-nio-8080-exec-4] WARN  c.hotelreservation.filter.AuthFilter - No session found for protected URL: /reservation/search
+2026-02-20 15:20:22.563 [http-nio-8080-exec-4] INFO  c.hotelreservation.filter.AuthFilter - Redirecting to login: Session expired. Please login again.
+2026-02-20 15:20:22.569 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 15:20:22.569 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 15:20:22.569 [http-nio-8080-exec-5] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 15:20:37.341 [http-nio-8080-exec-7] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/login (path: /login)
+2026-02-20 15:20:37.341 [http-nio-8080-exec-7] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 15:20:37.341 [http-nio-8080-exec-7] INFO  c.h.servlet.LoginServlet - POST /login - Login attempt for user: guest
+2026-02-20 15:20:37.343 [http-nio-8080-exec-7] DEBUG c.h.repository.impl.UserDAOImpl - Found user: guest
+2026-02-20 15:20:37.552 [http-nio-8080-exec-7] INFO  c.h.service.impl.UserServiceImpl - User authenticated successfully: guest (role: GUEST)
+2026-02-20 15:20:37.552 [http-nio-8080-exec-7] INFO  c.h.controller.SystemController - Successful login for user: guest (role: GUEST)
+2026-02-20 15:20:37.552 [http-nio-8080-exec-7] INFO  c.h.servlet.LoginServlet - Successful login for user: guest (role: GUEST)
+2026-02-20 15:20:37.552 [http-nio-8080-exec-7] DEBUG c.h.servlet.LoginServlet - Session created for user: guest with role: GUEST
+2026-02-20 15:20:37.558 [http-nio-8080-exec-8] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/search (path: /reservation/search)
+2026-02-20 15:20:37.559 [http-nio-8080-exec-8] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/search
+2026-02-20 15:20:37.559 [http-nio-8080-exec-8] DEBUG c.h.servlet.ReservationServlet - GET /reservation/search - Handling request
+2026-02-20 15:20:37.559 [http-nio-8080-exec-8] DEBUG c.h.servlet.ReservationServlet - Displaying room search form
+2026-02-20 15:20:39.908 [http-nio-8080-exec-10] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/list (path: /reservation/list)
+2026-02-20 15:20:39.908 [http-nio-8080-exec-10] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/list
+2026-02-20 15:20:39.908 [http-nio-8080-exec-10] DEBUG c.h.servlet.ReservationServlet - GET /reservation/list - Handling request
+2026-02-20 15:20:39.908 [http-nio-8080-exec-10] DEBUG c.h.servlet.ReservationServlet - Displaying user's reservations
+2026-02-20 15:20:48.854 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/list (path: /reservation/list)
+2026-02-20 15:20:48.854 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/list
+2026-02-20 15:20:48.854 [http-nio-8080-exec-3] DEBUG c.h.servlet.ReservationServlet - GET /reservation/list - Handling request
+2026-02-20 15:20:48.854 [http-nio-8080-exec-3] DEBUG c.h.servlet.ReservationServlet - Displaying user's reservations
+2026-02-20 15:21:01.957 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/ (path: /)
+2026-02-20 15:21:01.957 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /
+2026-02-20 15:21:03.823 [http-nio-8080-exec-7] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 15:21:03.824 [http-nio-8080-exec-7] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 15:21:03.824 [http-nio-8080-exec-7] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 15:21:03.824 [http-nio-8080-exec-7] INFO  c.h.servlet.LoginServlet - User already logged in, redirecting to: /projectweb/reservation/search
+2026-02-20 15:21:03.829 [http-nio-8080-exec-8] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/search (path: /reservation/search)
+2026-02-20 15:21:03.829 [http-nio-8080-exec-8] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/search
+2026-02-20 15:21:03.830 [http-nio-8080-exec-8] DEBUG c.h.servlet.ReservationServlet - GET /reservation/search - Handling request
+2026-02-20 15:21:03.830 [http-nio-8080-exec-8] DEBUG c.h.servlet.ReservationServlet - Displaying room search form
+2026-02-20 15:21:14.139 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/reservation/search (path: /reservation/search)
+2026-02-20 15:21:14.140 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/search
+2026-02-20 15:21:14.140 [http-nio-8080-exec-1] DEBUG c.h.servlet.ReservationServlet - POST /reservation/search - Processing request
+2026-02-20 15:21:14.140 [http-nio-8080-exec-1] INFO  c.h.servlet.ReservationServlet - Searching rooms for dates: 2026-02-28 to 2026-03-01
+2026-02-20 15:21:14.143 [http-nio-8080-exec-1] DEBUG c.h.service.impl.RoomServiceImpl - Retrieved 7 available rooms for dates: 2026-02-28 to 2026-03-01
+2026-02-20 15:21:14.143 [http-nio-8080-exec-1] INFO  c.h.controller.ReservationController - Room search performed: 7 rooms available for 2026-02-28 to 2026-03-01
+2026-02-20 15:21:23.120 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/reservation/create (path: /reservation/create)
+2026-02-20 15:21:23.120 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/create
+2026-02-20 15:21:23.120 [http-nio-8080-exec-3] DEBUG c.h.servlet.ReservationServlet - POST /reservation/create - Processing request
+2026-02-20 15:21:23.120 [http-nio-8080-exec-3] INFO  c.h.servlet.ReservationServlet - Creating reservation for guest: pavindya methsara kankanamge, room: 8, dates: 2026-02-28 to 2026-03-01
+2026-02-20 15:21:23.120 [http-nio-8080-exec-3] INFO  c.h.service.impl.BookingService - Starting online reservation for guest: pavindya methsara kankanamge, Room: 8
+2026-02-20 15:21:23.122 [http-nio-8080-exec-3] DEBUG c.h.service.impl.RoomServiceImpl - Retrieved room by ID: 8
+2026-02-20 15:21:23.122 [http-nio-8080-exec-3] INFO  c.h.service.impl.OnlineResService - Created online reservation: ONL_40c0cb89
+2026-02-20 15:21:23.123 [http-nio-8080-exec-3] ERROR c.h.r.impl.ReservationDAOImpl - Error saving reservation: ONL_40c0cb89
+java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`hotel_reservation`.`reservations`, CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`guest_id`) REFERENCES `guests` (`id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at com.hotelreservation.repository.impl.ReservationDAOImpl.save(ReservationDAOImpl.java:162)
+	at com.hotelreservation.service.ReservationService.processBooking(ReservationService.java:53)
+	at com.hotelreservation.service.impl.BookingService.makeOnlineReservation(BookingService.java:79)
+	at com.hotelreservation.controller.ReservationController.makeReservation(ReservationController.java:75)
+	at com.hotelreservation.servlet.ReservationServlet.handleReservationCreate(ReservationServlet.java:172)
+	at com.hotelreservation.servlet.ReservationServlet.doPost(ReservationServlet.java:105)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.hotelreservation.filter.AuthFilter.doFilter(AuthFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-20 15:21:23.123 [http-nio-8080-exec-3] INFO  c.h.service.impl.PaymentServiceImpl - Processing payment of 300.0 using POS_ADAPTER
+2026-02-20 15:21:23.123 [http-nio-8080-exec-3] INFO  c.h.adapter.POSAdapter - Processing POS payment for amount: 300.0
+2026-02-20 15:21:23.123 [http-nio-8080-exec-3] DEBUG c.h.a.POSAdapter$ExternalPOSSystem - POS Terminal: Authorizing amount: 300.0
+2026-02-20 15:21:23.124 [http-nio-8080-exec-3] INFO  c.h.adapter.POSAdapter - POS payment successful. Transaction ID: POS_1771581083124
+2026-02-20 15:21:23.124 [http-nio-8080-exec-3] INFO  c.h.service.impl.PaymentServiceImpl - Payment successful: POS Terminal | Transaction ID: POS_1771581083124
+2026-02-20 15:21:23.126 [http-nio-8080-exec-3] INFO  c.h.repository.impl.RoomDAOImpl - Room updated: 302
+2026-02-20 15:21:23.126 [http-nio-8080-exec-3] INFO  c.h.service.impl.RoomServiceImpl - Room 8 status updated to: RESERVED
+2026-02-20 15:21:23.126 [http-nio-8080-exec-3] INFO  c.h.service.impl.OnlineResService - Sending confirmation email to: nirodyakaka@gmail.com
+2026-02-20 15:21:23.126 [http-nio-8080-exec-3] INFO  c.h.service.impl.OnlineResService - Reservation ID: ONL_40c0cb89, Amount: 300.0
+2026-02-20 15:21:23.127 [http-nio-8080-exec-3] INFO  c.h.r.impl.ReservationDAOImpl - Reservation updated: ONL_40c0cb89
+2026-02-20 15:21:23.127 [http-nio-8080-exec-3] INFO  c.h.service.impl.BookingService - Online reservation completed successfully: ONL_40c0cb89
+2026-02-20 15:21:23.127 [http-nio-8080-exec-3] INFO  c.h.controller.ReservationController - Online reservation created: ONL_40c0cb89
+2026-02-20 15:21:38.904 [http-nio-8080-exec-6] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/search (path: /reservation/search)
+2026-02-20 15:21:38.905 [http-nio-8080-exec-6] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/search
+2026-02-20 15:21:38.905 [http-nio-8080-exec-6] DEBUG c.h.servlet.ReservationServlet - GET /reservation/search - Handling request
+2026-02-20 15:21:38.905 [http-nio-8080-exec-6] DEBUG c.h.servlet.ReservationServlet - Displaying room search form
+2026-02-20 15:21:50.808 [http-nio-8080-exec-8] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/reservation/search (path: /reservation/search)
+2026-02-20 15:21:50.808 [http-nio-8080-exec-8] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/search
+2026-02-20 15:21:50.808 [http-nio-8080-exec-8] DEBUG c.h.servlet.ReservationServlet - POST /reservation/search - Processing request
+2026-02-20 15:21:50.808 [http-nio-8080-exec-8] INFO  c.h.servlet.ReservationServlet - Searching rooms for dates: 2026-02-26 to 2026-02-27
+2026-02-20 15:21:50.811 [http-nio-8080-exec-8] DEBUG c.h.service.impl.RoomServiceImpl - Retrieved 6 available rooms for dates: 2026-02-26 to 2026-02-27
+2026-02-20 15:21:50.811 [http-nio-8080-exec-8] INFO  c.h.controller.ReservationController - Room search performed: 6 rooms available for 2026-02-26 to 2026-02-27
+2026-02-20 15:24:33.622 [http-nio-8080-exec-2] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/search (path: /reservation/search)
+2026-02-20 15:24:33.623 [http-nio-8080-exec-2] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/search
+2026-02-20 15:24:33.623 [http-nio-8080-exec-2] DEBUG c.h.servlet.ReservationServlet - GET /reservation/search - Handling request
+2026-02-20 15:24:33.623 [http-nio-8080-exec-2] DEBUG c.h.servlet.ReservationServlet - Displaying room search form
+2026-02-20 15:24:35.137 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/list (path: /reservation/list)
+2026-02-20 15:24:35.137 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/list
+2026-02-20 15:24:35.137 [http-nio-8080-exec-4] DEBUG c.h.servlet.ReservationServlet - GET /reservation/list - Handling request
+2026-02-20 15:24:35.137 [http-nio-8080-exec-4] DEBUG c.h.servlet.ReservationServlet - Displaying user's reservations
+2026-02-20 15:24:43.228 [http-nio-8080-exec-6] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/cancel (path: /reservation/cancel)
+2026-02-20 15:24:43.228 [http-nio-8080-exec-6] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/cancel
+2026-02-20 15:24:43.228 [http-nio-8080-exec-6] DEBUG c.h.servlet.ReservationServlet - GET /reservation/cancel - Handling request
+2026-02-20 15:24:43.229 [http-nio-8080-exec-6] DEBUG c.h.servlet.ReservationServlet - Displaying cancellation form for reservation: 1
+2026-02-20 15:24:48.314 [http-nio-8080-exec-8] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/reservation/cancel (path: /reservation/cancel)
+2026-02-20 15:24:48.315 [http-nio-8080-exec-8] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/cancel
+2026-02-20 15:24:48.315 [http-nio-8080-exec-8] DEBUG c.h.servlet.ReservationServlet - POST /reservation/cancel - Processing request
+2026-02-20 15:24:48.315 [http-nio-8080-exec-8] INFO  c.h.servlet.ReservationServlet - Cancelling reservation: 444
+2026-02-20 15:24:48.315 [http-nio-8080-exec-8] INFO  c.h.service.impl.BookingService - Cancelling reservation: 444
+2026-02-20 15:24:48.317 [http-nio-8080-exec-8] ERROR c.h.service.impl.BookingService - Error cancelling reservation
+java.lang.Exception: Reservation not found: 444
+	at com.hotelreservation.service.impl.BookingService.lambda$cancelReservation$2(BookingService.java:242)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.hotelreservation.service.impl.BookingService.cancelReservation(BookingService.java:242)
+	at com.hotelreservation.controller.ReservationController.cancelReservation(ReservationController.java:99)
+	at com.hotelreservation.servlet.ReservationServlet.handleReservationCancel(ReservationServlet.java:221)
+	at com.hotelreservation.servlet.ReservationServlet.doPost(ReservationServlet.java:107)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.hotelreservation.filter.AuthFilter.doFilter(AuthFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-20 15:24:48.317 [http-nio-8080-exec-8] ERROR c.h.controller.ReservationController - Error cancelling reservation
+java.lang.Exception: Reservation not found: 444
+	at com.hotelreservation.service.impl.BookingService.lambda$cancelReservation$2(BookingService.java:242)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.hotelreservation.service.impl.BookingService.cancelReservation(BookingService.java:242)
+	at com.hotelreservation.controller.ReservationController.cancelReservation(ReservationController.java:99)
+	at com.hotelreservation.servlet.ReservationServlet.handleReservationCancel(ReservationServlet.java:221)
+	at com.hotelreservation.servlet.ReservationServlet.doPost(ReservationServlet.java:107)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.hotelreservation.filter.AuthFilter.doFilter(AuthFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-20 15:24:55.242 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/reservation/cancel (path: /reservation/cancel)
+2026-02-20 15:24:55.243 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/cancel
+2026-02-20 15:24:55.243 [http-nio-8080-exec-1] DEBUG c.h.servlet.ReservationServlet - POST /reservation/cancel - Processing request
+2026-02-20 15:24:55.243 [http-nio-8080-exec-1] INFO  c.h.servlet.ReservationServlet - Cancelling reservation: 1
+2026-02-20 15:24:55.243 [http-nio-8080-exec-1] INFO  c.h.service.impl.BookingService - Cancelling reservation: 1
+2026-02-20 15:24:55.245 [http-nio-8080-exec-1] ERROR c.h.service.impl.BookingService - Error cancelling reservation
+java.lang.Exception: Reservation not found: 1
+	at com.hotelreservation.service.impl.BookingService.lambda$cancelReservation$2(BookingService.java:242)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.hotelreservation.service.impl.BookingService.cancelReservation(BookingService.java:242)
+	at com.hotelreservation.controller.ReservationController.cancelReservation(ReservationController.java:99)
+	at com.hotelreservation.servlet.ReservationServlet.handleReservationCancel(ReservationServlet.java:221)
+	at com.hotelreservation.servlet.ReservationServlet.doPost(ReservationServlet.java:107)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.hotelreservation.filter.AuthFilter.doFilter(AuthFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-20 15:24:55.245 [http-nio-8080-exec-1] ERROR c.h.controller.ReservationController - Error cancelling reservation
+java.lang.Exception: Reservation not found: 1
+	at com.hotelreservation.service.impl.BookingService.lambda$cancelReservation$2(BookingService.java:242)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.hotelreservation.service.impl.BookingService.cancelReservation(BookingService.java:242)
+	at com.hotelreservation.controller.ReservationController.cancelReservation(ReservationController.java:99)
+	at com.hotelreservation.servlet.ReservationServlet.handleReservationCancel(ReservationServlet.java:221)
+	at com.hotelreservation.servlet.ReservationServlet.doPost(ReservationServlet.java:107)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.hotelreservation.filter.AuthFilter.doFilter(AuthFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-20 15:25:00.774 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/reservation/cancel (path: /reservation/cancel)
+2026-02-20 15:25:00.775 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/cancel
+2026-02-20 15:25:00.775 [http-nio-8080-exec-3] DEBUG c.h.servlet.ReservationServlet - POST /reservation/cancel - Processing request
+2026-02-20 15:25:00.775 [http-nio-8080-exec-3] INFO  c.h.servlet.ReservationServlet - Cancelling reservation: 0
+2026-02-20 15:25:00.775 [http-nio-8080-exec-3] INFO  c.h.service.impl.BookingService - Cancelling reservation: 0
+2026-02-20 15:25:00.776 [http-nio-8080-exec-3] ERROR c.h.service.impl.BookingService - Error cancelling reservation
+java.lang.Exception: Reservation not found: 0
+	at com.hotelreservation.service.impl.BookingService.lambda$cancelReservation$2(BookingService.java:242)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.hotelreservation.service.impl.BookingService.cancelReservation(BookingService.java:242)
+	at com.hotelreservation.controller.ReservationController.cancelReservation(ReservationController.java:99)
+	at com.hotelreservation.servlet.ReservationServlet.handleReservationCancel(ReservationServlet.java:221)
+	at com.hotelreservation.servlet.ReservationServlet.doPost(ReservationServlet.java:107)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.hotelreservation.filter.AuthFilter.doFilter(AuthFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-20 15:25:00.776 [http-nio-8080-exec-3] ERROR c.h.controller.ReservationController - Error cancelling reservation
+java.lang.Exception: Reservation not found: 0
+	at com.hotelreservation.service.impl.BookingService.lambda$cancelReservation$2(BookingService.java:242)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.hotelreservation.service.impl.BookingService.cancelReservation(BookingService.java:242)
+	at com.hotelreservation.controller.ReservationController.cancelReservation(ReservationController.java:99)
+	at com.hotelreservation.servlet.ReservationServlet.handleReservationCancel(ReservationServlet.java:221)
+	at com.hotelreservation.servlet.ReservationServlet.doPost(ReservationServlet.java:107)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.hotelreservation.filter.AuthFilter.doFilter(AuthFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-20 15:25:10.859 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/search (path: /reservation/search)
+2026-02-20 15:25:10.859 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/search
+2026-02-20 15:25:10.859 [http-nio-8080-exec-5] DEBUG c.h.servlet.ReservationServlet - GET /reservation/search - Handling request
+2026-02-20 15:25:10.859 [http-nio-8080-exec-5] DEBUG c.h.servlet.ReservationServlet - Displaying room search form
+2026-02-20 15:26:10.864 [http-nio-8080-exec-9] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/list (path: /reservation/list)
+2026-02-20 15:26:10.864 [http-nio-8080-exec-9] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/list
+2026-02-20 15:26:10.864 [http-nio-8080-exec-9] DEBUG c.h.servlet.ReservationServlet - GET /reservation/list - Handling request
+2026-02-20 15:26:10.864 [http-nio-8080-exec-9] DEBUG c.h.servlet.ReservationServlet - Displaying user's reservations
+2026-02-20 15:26:14.338 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/cancel (path: /reservation/cancel)
+2026-02-20 15:26:14.338 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/cancel
+2026-02-20 15:26:14.338 [http-nio-8080-exec-1] DEBUG c.h.servlet.ReservationServlet - GET /reservation/cancel - Handling request
+2026-02-20 15:26:14.338 [http-nio-8080-exec-1] DEBUG c.h.servlet.ReservationServlet - Displaying cancellation form for reservation:  ONL_16d3e177
+2026-02-20 15:26:16.538 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/reservation/cancel (path: /reservation/cancel)
+2026-02-20 15:26:16.538 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/cancel
+2026-02-20 15:26:16.538 [http-nio-8080-exec-3] DEBUG c.h.servlet.ReservationServlet - POST /reservation/cancel - Processing request
+2026-02-20 15:26:16.539 [http-nio-8080-exec-3] INFO  c.h.servlet.ReservationServlet - Cancelling reservation:  ONL_16d3e177
+2026-02-20 15:26:16.539 [http-nio-8080-exec-3] INFO  c.h.service.impl.BookingService - Cancelling reservation:  ONL_16d3e177
+2026-02-20 15:26:16.540 [http-nio-8080-exec-3] ERROR c.h.service.impl.BookingService - Error cancelling reservation
+java.lang.Exception: Reservation not found:  ONL_16d3e177
+	at com.hotelreservation.service.impl.BookingService.lambda$cancelReservation$2(BookingService.java:242)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.hotelreservation.service.impl.BookingService.cancelReservation(BookingService.java:242)
+	at com.hotelreservation.controller.ReservationController.cancelReservation(ReservationController.java:99)
+	at com.hotelreservation.servlet.ReservationServlet.handleReservationCancel(ReservationServlet.java:221)
+	at com.hotelreservation.servlet.ReservationServlet.doPost(ReservationServlet.java:107)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.hotelreservation.filter.AuthFilter.doFilter(AuthFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-20 15:26:16.541 [http-nio-8080-exec-3] ERROR c.h.controller.ReservationController - Error cancelling reservation
+java.lang.Exception: Reservation not found:  ONL_16d3e177
+	at com.hotelreservation.service.impl.BookingService.lambda$cancelReservation$2(BookingService.java:242)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.hotelreservation.service.impl.BookingService.cancelReservation(BookingService.java:242)
+	at com.hotelreservation.controller.ReservationController.cancelReservation(ReservationController.java:99)
+	at com.hotelreservation.servlet.ReservationServlet.handleReservationCancel(ReservationServlet.java:221)
+	at com.hotelreservation.servlet.ReservationServlet.doPost(ReservationServlet.java:107)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.hotelreservation.filter.AuthFilter.doFilter(AuthFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-20 15:26:22.122 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/search (path: /reservation/search)
+2026-02-20 15:26:22.122 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/search
+2026-02-20 15:26:22.122 [http-nio-8080-exec-5] DEBUG c.h.servlet.ReservationServlet - GET /reservation/search - Handling request
+2026-02-20 15:26:22.122 [http-nio-8080-exec-5] DEBUG c.h.servlet.ReservationServlet - Displaying room search form
+2026-02-20 15:32:52.741 [main] INFO  c.hotelreservation.filter.AuthFilter - AuthFilter destroyed
+2026-02-20 15:32:56.625 [main] INFO  c.hotelreservation.filter.AuthFilter - AuthFilter initialized
+2026-02-20 15:33:23.003 [http-nio-8080-exec-1] INFO  c.h.service.impl.PaymentServiceImpl - PaymentService initialized with default adapter: POS_ADAPTER
+2026-02-20 15:33:23.003 [http-nio-8080-exec-1] INFO  c.h.servlet.ReservationServlet - ReservationServlet initialized
+2026-02-20 15:33:23.005 [http-nio-8080-exec-1] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/search (path: /reservation/search)
+2026-02-20 15:33:23.005 [http-nio-8080-exec-1] WARN  c.hotelreservation.filter.AuthFilter - No session found for protected URL: /reservation/search
+2026-02-20 15:33:23.005 [http-nio-8080-exec-1] INFO  c.hotelreservation.filter.AuthFilter - Redirecting to login: Session expired. Please login again.
+2026-02-20 15:33:23.014 [http-nio-8080-exec-2] INFO  c.h.servlet.LoginServlet - LoginServlet initialized
+2026-02-20 15:33:23.015 [http-nio-8080-exec-2] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/login (path: /login)
+2026-02-20 15:33:23.015 [http-nio-8080-exec-2] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 15:33:23.015 [http-nio-8080-exec-2] DEBUG c.h.servlet.LoginServlet - GET /login - Display login form
+2026-02-20 15:33:38.156 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/login (path: /login)
+2026-02-20 15:33:38.156 [http-nio-8080-exec-4] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 15:33:38.157 [http-nio-8080-exec-4] INFO  c.h.servlet.LoginServlet - POST /login - Login attempt for user: guest
+2026-02-20 15:33:38.157 [http-nio-8080-exec-4] INFO  c.h.persistence.DatabaseConnection - Configuration loaded from application.properties
+2026-02-20 15:33:38.163 [http-nio-8080-exec-4] INFO  c.h.persistence.DatabaseConnection - Initializing HikariCP with URL: jdbc:mysql://localhost:3306/hotel_reservation, user: root
+2026-02-20 15:33:38.168 [http-nio-8080-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-20 15:33:38.378 [http-nio-8080-exec-4] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@73f2fadf
+2026-02-20 15:33:38.380 [http-nio-8080-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-20 15:33:38.380 [http-nio-8080-exec-4] INFO  c.h.persistence.DatabaseConnection - HikariCP connection pool initialized successfully
+2026-02-20 15:33:38.380 [http-nio-8080-exec-4] INFO  c.h.persistence.DatabaseConnection - DatabaseConnection singleton initialized
+2026-02-20 15:33:38.388 [http-nio-8080-exec-4] DEBUG c.h.repository.impl.UserDAOImpl - Found user: guest
+2026-02-20 15:33:38.605 [http-nio-8080-exec-4] INFO  c.h.service.impl.UserServiceImpl - User authenticated successfully: guest (role: GUEST)
+2026-02-20 15:33:38.606 [http-nio-8080-exec-4] INFO  c.h.controller.SystemController - Successful login for user: guest (role: GUEST)
+2026-02-20 15:33:38.606 [http-nio-8080-exec-4] INFO  c.h.servlet.LoginServlet - Successful login for user: guest (role: GUEST)
+2026-02-20 15:33:38.607 [http-nio-8080-exec-4] DEBUG c.h.servlet.LoginServlet - Session created for user: guest with role: GUEST
+2026-02-20 15:33:38.616 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/search (path: /reservation/search)
+2026-02-20 15:33:38.617 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/search
+2026-02-20 15:33:38.617 [http-nio-8080-exec-5] DEBUG c.h.servlet.ReservationServlet - GET /reservation/search - Handling request
+2026-02-20 15:33:38.617 [http-nio-8080-exec-5] DEBUG c.h.servlet.ReservationServlet - Displaying room search form
+2026-02-20 15:33:42.598 [http-nio-8080-exec-7] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/list (path: /reservation/list)
+2026-02-20 15:33:42.598 [http-nio-8080-exec-7] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/list
+2026-02-20 15:33:42.598 [http-nio-8080-exec-7] DEBUG c.h.servlet.ReservationServlet - GET /reservation/list - Handling request
+2026-02-20 15:33:42.598 [http-nio-8080-exec-7] DEBUG c.h.servlet.ReservationServlet - Displaying all reservations
+2026-02-20 15:33:42.601 [http-nio-8080-exec-7] INFO  c.h.service.impl.BookingService - Retrieved 0 reservations
+2026-02-20 15:33:42.601 [http-nio-8080-exec-7] INFO  c.h.controller.ReservationController - Retrieved 0 reservations
+2026-02-20 15:34:25.161 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/login (path: /login)
+2026-02-20 15:34:25.161 [http-nio-8080-exec-3] DEBUG c.hotelreservation.filter.AuthFilter - Public URL, allowing access: /login
+2026-02-20 15:34:25.161 [http-nio-8080-exec-3] INFO  c.h.servlet.LoginServlet - POST /login - Login attempt for user: guest
+2026-02-20 15:34:25.163 [http-nio-8080-exec-3] DEBUG c.h.repository.impl.UserDAOImpl - Found user: guest
+2026-02-20 15:34:25.375 [http-nio-8080-exec-3] INFO  c.h.service.impl.UserServiceImpl - User authenticated successfully: guest (role: GUEST)
+2026-02-20 15:34:25.375 [http-nio-8080-exec-3] INFO  c.h.controller.SystemController - Successful login for user: guest (role: GUEST)
+2026-02-20 15:34:25.375 [http-nio-8080-exec-3] INFO  c.h.servlet.LoginServlet - Successful login for user: guest (role: GUEST)
+2026-02-20 15:34:25.375 [http-nio-8080-exec-3] DEBUG c.h.servlet.LoginServlet - Session created for user: guest with role: GUEST
+2026-02-20 15:34:25.389 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - Request: GET /projectweb/reservation/list (path: /reservation/list)
+2026-02-20 15:34:25.389 [http-nio-8080-exec-5] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/list
+2026-02-20 15:34:25.389 [http-nio-8080-exec-5] DEBUG c.h.servlet.ReservationServlet - GET /reservation/list - Handling request
+2026-02-20 15:34:25.389 [http-nio-8080-exec-5] DEBUG c.h.servlet.ReservationServlet - Displaying all reservations
+2026-02-20 15:34:25.391 [http-nio-8080-exec-5] INFO  c.h.service.impl.BookingService - Retrieved 0 reservations
+2026-02-20 15:34:25.391 [http-nio-8080-exec-5] INFO  c.h.controller.ReservationController - Retrieved 0 reservations
+2026-02-20 15:35:45.440 [http-nio-8080-exec-8] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/reservation/create (path: /reservation/create)
+2026-02-20 15:35:45.441 [http-nio-8080-exec-8] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/create
+2026-02-20 15:35:45.441 [http-nio-8080-exec-8] DEBUG c.h.servlet.ReservationServlet - POST /reservation/create - Processing request
+2026-02-20 15:35:45.442 [http-nio-8080-exec-8] INFO  c.h.servlet.ReservationServlet - Creating reservation for guest: John Doe, room: 1, dates: 2026-03-01 to 2026-03-03
+2026-02-20 15:35:45.442 [http-nio-8080-exec-8] INFO  c.h.service.impl.BookingService - Starting online reservation for guest: John Doe, Room: 1
+2026-02-20 15:35:45.445 [http-nio-8080-exec-8] DEBUG c.h.service.impl.RoomServiceImpl - Retrieved room by ID: 1
+2026-02-20 15:35:45.446 [http-nio-8080-exec-8] ERROR c.h.service.impl.BookingService - Error during online reservation
+com.hotelreservation.exception.RoomNotAvailableException: Room 101 is not available: Room is not available
+	at com.hotelreservation.service.impl.BookingService.getRoomEntity(BookingService.java:352)
+	at com.hotelreservation.service.impl.BookingService.makeOnlineReservation(BookingService.java:69)
+	at com.hotelreservation.controller.ReservationController.makeReservation(ReservationController.java:75)
+	at com.hotelreservation.servlet.ReservationServlet.handleReservationCreate(ReservationServlet.java:172)
+	at com.hotelreservation.servlet.ReservationServlet.doPost(ReservationServlet.java:105)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.hotelreservation.filter.AuthFilter.doFilter(AuthFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-20 15:35:45.447 [http-nio-8080-exec-8] ERROR c.h.controller.ReservationController - Error creating reservation
+com.hotelreservation.exception.RoomNotAvailableException: Room 101 is not available: Room is not available
+	at com.hotelreservation.service.impl.BookingService.getRoomEntity(BookingService.java:352)
+	at com.hotelreservation.service.impl.BookingService.makeOnlineReservation(BookingService.java:69)
+	at com.hotelreservation.controller.ReservationController.makeReservation(ReservationController.java:75)
+	at com.hotelreservation.servlet.ReservationServlet.handleReservationCreate(ReservationServlet.java:172)
+	at com.hotelreservation.servlet.ReservationServlet.doPost(ReservationServlet.java:105)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.hotelreservation.filter.AuthFilter.doFilter(AuthFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-20 15:41:00.398 [http-nio-8080-exec-9] DEBUG c.hotelreservation.filter.AuthFilter - Request: POST /projectweb/reservation/create (path: /reservation/create)
+2026-02-20 15:41:00.398 [http-nio-8080-exec-9] DEBUG c.hotelreservation.filter.AuthFilter - User 3 (role: GUEST) accessing: /reservation/create
+2026-02-20 15:41:00.398 [http-nio-8080-exec-9] DEBUG c.h.servlet.ReservationServlet - POST /reservation/create - Processing request
+2026-02-20 15:41:00.398 [http-nio-8080-exec-9] INFO  c.h.servlet.ReservationServlet - Creating reservation for guest: John Doe, room: 2, dates: 2026-03-01 to 2026-03-03
+2026-02-20 15:41:00.399 [http-nio-8080-exec-9] INFO  c.h.service.impl.BookingService - Starting online reservation for guest: John Doe, Room: 2
+2026-02-20 15:41:00.400 [http-nio-8080-exec-9] DEBUG c.h.service.impl.RoomServiceImpl - Retrieved room by ID: 2
+2026-02-20 15:41:00.401 [http-nio-8080-exec-9] INFO  c.h.service.impl.OnlineResService - Created online reservation: ONL_7befc4f9
+2026-02-20 15:41:00.416 [http-nio-8080-exec-9] ERROR c.h.r.impl.ReservationDAOImpl - Error saving reservation: ONL_7befc4f9
+java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`hotel_reservation`.`reservations`, CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`guest_id`) REFERENCES `guests` (`id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at com.hotelreservation.repository.impl.ReservationDAOImpl.save(ReservationDAOImpl.java:162)
+	at com.hotelreservation.service.ReservationService.processBooking(ReservationService.java:53)
+	at com.hotelreservation.service.impl.BookingService.makeOnlineReservation(BookingService.java:79)
+	at com.hotelreservation.controller.ReservationController.makeReservation(ReservationController.java:75)
+	at com.hotelreservation.servlet.ReservationServlet.handleReservationCreate(ReservationServlet.java:172)
+	at com.hotelreservation.servlet.ReservationServlet.doPost(ReservationServlet.java:105)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.hotelreservation.filter.AuthFilter.doFilter(AuthFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-02-20 15:41:00.417 [http-nio-8080-exec-9] INFO  c.h.service.impl.PaymentServiceImpl - Processing payment of 200.0 using POS_ADAPTER
+2026-02-20 15:41:00.417 [http-nio-8080-exec-9] INFO  c.h.adapter.POSAdapter - Processing POS payment for amount: 200.0
+2026-02-20 15:41:00.417 [http-nio-8080-exec-9] DEBUG c.h.a.POSAdapter$ExternalPOSSystem - POS Terminal: Authorizing amount: 200.0
+2026-02-20 15:41:00.417 [http-nio-8080-exec-9] INFO  c.h.adapter.POSAdapter - POS payment successful. Transaction ID: POS_1771582260417
+2026-02-20 15:41:00.417 [http-nio-8080-exec-9] INFO  c.h.service.impl.PaymentServiceImpl - Payment successful: POS Terminal | Transaction ID: POS_1771582260417
+2026-02-20 15:41:00.420 [http-nio-8080-exec-9] INFO  c.h.repository.impl.RoomDAOImpl - Room updated: 102
+2026-02-20 15:41:00.420 [http-nio-8080-exec-9] INFO  c.h.service.impl.RoomServiceImpl - Room 2 status updated to: RESERVED
+2026-02-20 15:41:00.420 [http-nio-8080-exec-9] INFO  c.h.service.impl.OnlineResService - Sending confirmation email to: john@test.com
+2026-02-20 15:41:00.420 [http-nio-8080-exec-9] INFO  c.h.service.impl.OnlineResService - Reservation ID: ONL_7befc4f9, Amount: 200.0
+2026-02-20 15:41:00.421 [http-nio-8080-exec-9] INFO  c.h.r.impl.ReservationDAOImpl - Reservation updated: ONL_7befc4f9
+2026-02-20 15:41:00.421 [http-nio-8080-exec-9] INFO  c.h.service.impl.BookingService - Online reservation completed successfully: ONL_7befc4f9
+2026-02-20 15:41:00.421 [http-nio-8080-exec-9] INFO  c.h.controller.ReservationController - Online reservation created: ONL_7befc4f9

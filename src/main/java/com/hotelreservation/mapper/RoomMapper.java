@@ -17,9 +17,7 @@ public class RoomMapper {
         if (dto == null) {
             return null;
         }
-        Room room = new Room(dto.getNumber(), dto.getType(), dto.getBasePrice());
-        room.setStatus(dto.getStatus());
-        room.setClean(dto.isClean());
+        Room room = new Room(dto.getId(), dto.getNumber(), dto.getType(), dto.getBasePrice(), dto.getStatus(), dto.isClean());
         return room;
     }
 

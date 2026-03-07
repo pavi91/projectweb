@@ -3,23 +3,33 @@ package com.hotelreservation.servlet;
 import com.hotelreservation.controller.AdminController;
 import com.hotelreservation.controller.AdminController.ControllerResult;
 import com.hotelreservation.dto.UserDTO;
+import com.hotelreservation.exception.HotelSystemException;
 import com.hotelreservation.service.UserService;
 import com.hotelreservation.service.PaymentService;
 import com.hotelreservation.service.ReportService;
 import com.hotelreservation.service.impl.UserServiceImpl;
 import com.hotelreservation.service.impl.PaymentServiceImpl;
 import com.hotelreservation.service.impl.ReportServiceImpl;
+import com.hotelreservation.service.impl.RoomServiceImpl;
+import com.hotelreservation.service.impl.SeasonalPricingServiceImpl;
+import com.hotelreservation.service.SeasonalPricingService;
+import com.hotelreservation.service.RoomService;
+import com.hotelreservation.entity.SeasonalPricing;
+import com.hotelreservation.dto.RoomDTO;
 import com.hotelreservation.repository.impl.UserDAOImpl;
 import com.hotelreservation.repository.impl.ReservationDAOImpl;
 import com.hotelreservation.repository.impl.RoomDAOImpl;
+import com.hotelreservation.repository.impl.SeasonalPricingDAOImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.List;
 
 /**
  * AdminServlet - Handles admin operations
@@ -30,6 +40,10 @@ import java.io.IOException;
  * - /admin/reports/* (GET/POST) - Generate reports
  * - /admin/payment-config (POST) - Configure payment adapter
  * - /admin/maintenance (POST) - Manage maintenance
+ * - /admin/seasonal-pricing (GET) - View seasonal pricing config
+ * - /admin/seasonal-pricing/create (POST) - Add a new season
+ * - /admin/seasonal-pricing/toggle (POST) - Activate/deactivate a season
+ * - /admin/seasonal-pricing/delete (POST) - Remove a season
  */
 public class AdminServlet extends HttpServlet {
     private static final Logger logger = LoggerFactory.getLogger(AdminServlet.class);
@@ -39,16 +53,21 @@ public class AdminServlet extends HttpServlet {
     private UserService userService;
     private PaymentService paymentService;
     private ReportService reportService;
+    private RoomService roomService;
+    private SeasonalPricingService seasonalPricingService;
 
     @Override
     public void init() throws ServletException {
         super.init();
         // Initialize services
+        RoomDAOImpl roomDAO = new RoomDAOImpl();
         userService = new UserServiceImpl(new UserDAOImpl());
         paymentService = new PaymentServiceImpl();
-        reportService = new ReportServiceImpl(new ReservationDAOImpl(), new RoomDAOImpl());
+        reportService = new ReportServiceImpl(new ReservationDAOImpl(), roomDAO);
+        roomService = new RoomServiceImpl(roomDAO);
+        seasonalPricingService = new SeasonalPricingServiceImpl(new SeasonalPricingDAOImpl());
 
-        controller = new AdminController(userService, reportService, paymentService);
+        controller = new AdminController(userService, reportService, paymentService, seasonalPricingService);
         logger.info("AdminServlet initialized");
     }
 
@@ -73,11 +92,19 @@ public class AdminServlet extends HttpServlet {
                 handlePaymentConfigForm(request, response);
             } else if (pathInfo.equals("/maintenance")) {
                 handleMaintenanceForm(request, response);
+            } else if (pathInfo.equals("/seasonal-pricing")) {
+                handleSeasonalPricingPage(request, response);
             } else {
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
             }
         } catch (Exception e) {
-            logger.error("Error handling GET request", e);
+            if (e instanceof HotelSystemException hse) {
+                logger.error("Hotel system error handling GET request: [{}] {}", hse.getErrorCode(), hse.getMessage(), hse);
+                request.setAttribute("errorCode", hse.getErrorCode());
+                request.setAttribute("statusCode", hse.getStatusCode());
+            } else {
+                logger.error("Error handling GET request", e);
+            }
             request.setAttribute("error", e.getMessage());
             request.getRequestDispatcher("/jsp/error.jsp").forward(request, response);
         }
@@ -102,11 +129,23 @@ public class AdminServlet extends HttpServlet {
                 handlePaymentConfiguration(request, response);
             } else if (pathInfo.equals("/maintenance")) {
                 handleMaintenanceUpdate(request, response);
+            } else if (pathInfo.equals("/seasonal-pricing/create")) {
+                handleSeasonCreate(request, response);
+            } else if (pathInfo.equals("/seasonal-pricing/toggle")) {
+                handleSeasonToggle(request, response);
+            } else if (pathInfo.equals("/seasonal-pricing/delete")) {
+                handleSeasonDelete(request, response);
             } else {
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
             }
         } catch (Exception e) {
-            logger.error("Error handling POST request", e);
+            if (e instanceof HotelSystemException hse) {
+                logger.error("Hotel system error handling POST request: [{}] {}", hse.getErrorCode(), hse.getMessage(), hse);
+                request.setAttribute("errorCode", hse.getErrorCode());
+                request.setAttribute("statusCode", hse.getStatusCode());
+            } else {
+                logger.error("Error handling POST request", e);
+            }
             request.setAttribute("error", e.getMessage());
             request.getRequestDispatcher("/jsp/error.jsp").forward(request, response);
         }
@@ -252,27 +291,169 @@ public class AdminServlet extends HttpServlet {
     }
 
     /**
-     * Display maintenance management form
+     * Display maintenance management form with list of dirty/maintenance rooms
      */
     private void handleMaintenanceForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         logger.debug("Displaying maintenance management form");
+        try {
+            // Get all rooms and filter to show dirty ones and under-maintenance ones
+            java.util.List<RoomDTO> allRooms = roomService.getAllRooms();
+            java.util.List<RoomDTO> dirtyRooms = allRooms.stream()
+                    .filter(r -> !r.isClean() || "UNDER_MAINTENANCE".equals(r.getStatus()))
+                    .collect(java.util.stream.Collectors.toList());
+            request.setAttribute("dirtyRooms", dirtyRooms);
+            request.setAttribute("allRooms", allRooms);
+        } catch (Exception e) {
+            logger.warn("Error loading rooms for maintenance form", e);
+        }
         request.getRequestDispatcher("/jsp/admin/maintenance.jsp").forward(request, response);
     }
 
     /**
-     * Update maintenance status
+     * Update maintenance status — mark room as clean or under maintenance
      */
     private void handleMaintenanceUpdate(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String roomId = request.getParameter("roomId");
-        String status = request.getParameter("status");
+        String roomIdStr = request.getParameter("roomId");
+        String action = request.getParameter("action");
 
-        logger.info("Updating room {} maintenance status to: {}", roomId, status);
+        logger.info("Maintenance update: room={}, action={}", roomIdStr, action);
 
-        request.setAttribute("message", "Maintenance status updated successfully");
-        request.getRequestDispatcher("/jsp/admin/maintenanceConfirmation.jsp").forward(request, response);
+        try {
+            int roomId = Integer.parseInt(roomIdStr);
+
+            if ("markClean".equals(action)) {
+                // Maintenance marks room as clean — room becomes bookable again
+                roomService.markRoomClean(roomId);
+                roomService.updateRoomStatus(roomId, "AVAILABLE");
+                request.setAttribute("message", "Room " + roomId + " marked as clean and available for booking.");
+            } else if ("markMaintenance".equals(action)) {
+                // Put room under maintenance
+                roomService.updateRoomStatus(roomId, "UNDER_MAINTENANCE");
+                request.setAttribute("message", "Room " + roomId + " placed under maintenance.");
+            } else {
+                request.setAttribute("error", "Unknown action: " + action);
+            }
+        } catch (NumberFormatException e) {
+            request.setAttribute("error", "Invalid room ID");
+        } catch (Exception e) {
+            logger.error("Error updating maintenance status", e);
+            request.setAttribute("error", "Error: " + e.getMessage());
+        }
+
+        // Re-load and re-display the maintenance form
+        handleMaintenanceForm(request, response);
+    }
+
+    // ===================== Seasonal Pricing Handlers =====================
+
+    /**
+     * Display seasonal pricing management page with existing seasons
+     */
+    private void handleSeasonalPricingPage(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        logger.debug("Displaying seasonal pricing management page");
+        try {
+            ControllerResult<List<SeasonalPricing>> result = controller.getAllSeasons();
+            if (result.isSuccess()) {
+                request.setAttribute("seasons", result.getData());
+            }
+        } catch (Exception e) {
+            logger.warn("Error loading seasonal pricing data", e);
+        }
+        request.getRequestDispatcher("/jsp/admin/seasonalPricing.jsp").forward(request, response);
+    }
+
+    /**
+     * Create a new seasonal pricing entry
+     */
+    private void handleSeasonCreate(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String seasonName = request.getParameter("seasonName");
+        String startDateStr = request.getParameter("startDate");
+        String endDateStr = request.getParameter("endDate");
+        String multiplierStr = request.getParameter("multiplier");
+
+        logger.info("Creating season: name={}, start={}, end={}, multiplier={}", seasonName, startDateStr, endDateStr, multiplierStr);
+
+        try {
+            LocalDate startDate = LocalDate.parse(startDateStr);
+            LocalDate endDate = LocalDate.parse(endDateStr);
+            double multiplier = Double.parseDouble(multiplierStr);
+
+            ControllerResult<Boolean> result = controller.createSeason(seasonName, startDate, endDate, multiplier);
+
+            if (result.isSuccess()) {
+                request.setAttribute("message", result.getMessage());
+            } else {
+                request.setAttribute("error", result.getMessage());
+            }
+        } catch (Exception e) {
+            logger.error("Error creating season", e);
+            request.setAttribute("error", "Invalid input: " + e.getMessage());
+        }
+
+        // Re-load and re-display the page
+        handleSeasonalPricingPage(request, response);
+    }
+
+    /**
+     * Toggle a season's active/inactive status
+     */
+    private void handleSeasonToggle(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String seasonIdStr = request.getParameter("seasonId");
+        String activeStr = request.getParameter("active");
+
+        logger.info("Toggling season: id={}, active={}", seasonIdStr, activeStr);
+
+        try {
+            int seasonId = Integer.parseInt(seasonIdStr);
+            boolean active = "true".equalsIgnoreCase(activeStr);
+
+            ControllerResult<Boolean> result = controller.toggleSeason(seasonId, active);
+
+            if (result.isSuccess()) {
+                request.setAttribute("message", result.getMessage());
+            } else {
+                request.setAttribute("error", result.getMessage());
+            }
+        } catch (Exception e) {
+            logger.error("Error toggling season", e);
+            request.setAttribute("error", "Error: " + e.getMessage());
+        }
+
+        handleSeasonalPricingPage(request, response);
+    }
+
+    /**
+     * Delete a seasonal pricing entry
+     */
+    private void handleSeasonDelete(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String seasonIdStr = request.getParameter("seasonId");
+        logger.info("Deleting season: id={}", seasonIdStr);
+
+        try {
+            int seasonId = Integer.parseInt(seasonIdStr);
+            ControllerResult<Boolean> result = controller.deleteSeason(seasonId);
+
+            if (result.isSuccess()) {
+                request.setAttribute("message", result.getMessage());
+            } else {
+                request.setAttribute("error", result.getMessage());
+            }
+        } catch (Exception e) {
+            logger.error("Error deleting season", e);
+            request.setAttribute("error", "Error: " + e.getMessage());
+        }
+
+        handleSeasonalPricingPage(request, response);
     }
 }
 

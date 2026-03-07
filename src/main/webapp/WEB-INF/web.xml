@@ -1,9 +1,11 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <display-name>Ocean View Resort - Hotel Reservation System</display-name>
 
   <filter>
     <filter-name>AuthFilter</filter-name>
@@ -15,12 +17,58 @@
   </filter-mapping>
 
   <servlet>
+    <servlet-name>SessionDebugServlet</servlet-name>
+    <jsp-file>/jsp/guest/sessionDebug.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionDebugServlet</servlet-name>
+    <url-pattern>/debug/session</url-pattern>
+  </servlet-mapping>
+
+  <!-- DEV ONLY - SQL Query Debug Page (remove before production, see DEV_FEATURES_TO_REMOVE.md) -->
+  <servlet>
+    <servlet-name>QueryDebugServlet</servlet-name>
+    <jsp-file>/jsp/guest/queryDebug.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QueryDebugServlet</servlet-name>
+    <url-pattern>/debug/queries</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>HelpPage</servlet-name>
+    <jsp-file>/jsp/help.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelpPage</servlet-name>
+    <url-pattern>/help</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SignUpServlet</servlet-name>
+    <servlet-class>com.hotelreservation.servlet.SignUpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignUpServlet</servlet-name>
+    <url-pattern>/signup</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>com.hotelreservation.servlet.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.hotelreservation.servlet.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
   </servlet-mapping>
 
   <servlet>
@@ -49,6 +97,23 @@
     <servlet-name>AdminServlet</servlet-name>
     <url-pattern>/admin/*</url-pattern>
   </servlet-mapping>
+
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+
+  <error-page>
+    <error-code>403</error-code>
+    <location>/jsp/accessDenied.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/jsp/404.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/jsp/500.jsp</location>
+  </error-page>
 
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>

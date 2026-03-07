@@ -9,7 +9,7 @@ public class User {
     private int id;
     private String username;
     private String passwordHash;
-    private String role; // ADMIN, RECEPTIONIST, GUEST, MAINTENANCE
+    private String role; // ADMIN, RECEPTIONIST, GUEST
     private long createdAt;
     private long updatedAt;
 

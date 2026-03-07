@@ -4,11 +4,16 @@ import com.hotelreservation.adapter.IPaymentAdapter;
 import com.hotelreservation.adapter.OnlineGatewayAdapter;
 import com.hotelreservation.adapter.POSAdapter;
 import com.hotelreservation.dto.UserDTO;
+import com.hotelreservation.entity.SeasonalPricing;
 import com.hotelreservation.service.PaymentService;
 import com.hotelreservation.service.ReportService;
+import com.hotelreservation.service.SeasonalPricingService;
 import com.hotelreservation.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.time.LocalDate;
+import java.util.List;
 
 /**
  * AdminController - handles admin operations
@@ -19,16 +24,25 @@ public class AdminController {
     private UserService userService;
     private ReportService reportService;
     private PaymentService paymentService;
+    private SeasonalPricingService seasonalPricingService;
 
     public AdminController(UserService userService, ReportService reportService, PaymentService paymentService) {
         this.userService = userService;
         this.reportService = reportService;
         this.paymentService = paymentService;
+        this.seasonalPricingService = null;
+    }
+
+    public AdminController(UserService userService, ReportService reportService, PaymentService paymentService, SeasonalPricingService seasonalPricingService) {
+        this.userService = userService;
+        this.reportService = reportService;
+        this.paymentService = paymentService;
+        this.seasonalPricingService = seasonalPricingService;
     }
 
     /**
      * Create a new staff account
-     * @param userDTO staff account details (role: RECEPTIONIST or MAINTENANCE)
+     * @param userDTO staff account details (role: RECEPTIONIST)
      * @return ControllerResult indicating success/failure
      */
     public ControllerResult<Boolean> createStaffAccount(UserDTO userDTO) {
@@ -177,7 +191,7 @@ public class AdminController {
      */
     public ControllerResult<String> getStaffList() {
         try {
-            // In production, this would query all RECEPTIONIST and MAINTENANCE users
+            // In production, this would query all RECEPTIONIST users
             logger.info("Retrieved staff list");
             return new ControllerResult<>(true, "Staff list retrieved", "See database for details");
         } catch (Exception e) {
@@ -186,10 +200,114 @@ public class AdminController {
         }
     }
 
+    // ===================== Seasonal Pricing Methods =====================
+
+    /**
+     * Get all seasonal pricing entries
+     * @return ControllerResult with list of SeasonalPricing
+     */
+    public ControllerResult<List<SeasonalPricing>> getAllSeasons() {
+        try {
+            if (seasonalPricingService == null) {
+                return new ControllerResult<>(false, "Seasonal pricing service not configured", null);
+            }
+            List<SeasonalPricing> seasons = seasonalPricingService.getAllSeasons();
+            return new ControllerResult<>(true, "Seasons retrieved", seasons);
+        } catch (Exception e) {
+            logger.error("Error retrieving seasons", e);
+            return new ControllerResult<>(false, "Error: " + e.getMessage(), null);
+        }
+    }
+
+    /**
+     * Create a new seasonal pricing entry
+     * @param seasonName name of the season
+     * @param startDate season start date
+     * @param endDate season end date
+     * @param multiplier pricing multiplier
+     * @return ControllerResult indicating success/failure
+     */
+    public ControllerResult<Boolean> createSeason(String seasonName, LocalDate startDate, LocalDate endDate, double multiplier) {
+        try {
+            if (seasonalPricingService == null) {
+                return new ControllerResult<>(false, "Seasonal pricing service not configured", false);
+            }
+            if (seasonName == null || seasonName.trim().isEmpty()) {
+                return new ControllerResult<>(false, "Season name is required", false);
+            }
+            if (startDate == null || endDate == null) {
+                return new ControllerResult<>(false, "Start and end dates are required", false);
+            }
+            if (endDate.isBefore(startDate)) {
+                return new ControllerResult<>(false, "End date must be after start date", false);
+            }
+            if (multiplier <= 0) {
+                return new ControllerResult<>(false, "Multiplier must be greater than 0", false);
+            }
+
+            SeasonalPricing pricing = new SeasonalPricing(seasonName, startDate, endDate, multiplier);
+            SeasonalPricing saved = seasonalPricingService.createSeason(pricing);
+
+            if (saved != null && saved.getId() > 0) {
+                logger.info("Seasonal pricing created: {} ({}x)", seasonName, multiplier);
+                return new ControllerResult<>(true, "Season '" + seasonName + "' created successfully with " + multiplier + "x multiplier", true);
+            }
+            return new ControllerResult<>(false, "Failed to save season", false);
+        } catch (Exception e) {
+            logger.error("Error creating season", e);
+            return new ControllerResult<>(false, "Error: " + e.getMessage(), false);
+        }
+    }
+
+    /**
+     * Toggle a season's active status
+     * @param seasonId the season ID
+     * @param active new active status
+     * @return ControllerResult indicating success/failure
+     */
+    public ControllerResult<Boolean> toggleSeason(int seasonId, boolean active) {
+        try {
+            if (seasonalPricingService == null) {
+                return new ControllerResult<>(false, "Seasonal pricing service not configured", false);
+            }
+            SeasonalPricing season = seasonalPricingService.getSeasonById(seasonId);
+            if (season == null) {
+                return new ControllerResult<>(false, "Season not found", false);
+            }
+            season.setActive(active);
+            seasonalPricingService.updateSeason(season);
+            String status = active ? "activated" : "deactivated";
+            logger.info("Season {} {}: {}", seasonId, status, season.getSeasonName());
+            return new ControllerResult<>(true, "Season '" + season.getSeasonName() + "' " + status, true);
+        } catch (Exception e) {
+            logger.error("Error toggling season", e);
+            return new ControllerResult<>(false, "Error: " + e.getMessage(), false);
+        }
+    }
+
+    /**
+     * Delete a seasonal pricing entry
+     * @param seasonId the season ID to delete
+     * @return ControllerResult indicating success/failure
+     */
+    public ControllerResult<Boolean> deleteSeason(int seasonId) {
+        try {
+            if (seasonalPricingService == null) {
+                return new ControllerResult<>(false, "Seasonal pricing service not configured", false);
+            }
+            seasonalPricingService.deleteSeason(seasonId);
+            logger.info("Season deleted: id={}", seasonId);
+            return new ControllerResult<>(true, "Season deleted successfully", true);
+        } catch (Exception e) {
+            logger.error("Error deleting season", e);
+            return new ControllerResult<>(false, "Error: " + e.getMessage(), false);
+        }
+    }
+
     // ===================== Helper Methods =====================
 
     private boolean isValidStaffRole(String role) {
-        return "RECEPTIONIST".equalsIgnoreCase(role) || "MAINTENANCE".equalsIgnoreCase(role);
+        return "RECEPTIONIST".equalsIgnoreCase(role);
     }
 
     /**
