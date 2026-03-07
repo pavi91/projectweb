@@ -36,14 +36,20 @@
                 <a class="btn" href="${pageContext.request.contextPath}/admin/reports">View Reports</a>
             </div>
             <div class="card">
-                <h3>Payment Configuration</h3>
-                <p>Switch between POS and Online Gateway adapters.</p>
-                <a class="btn orange" href="${pageContext.request.contextPath}/admin/payment-config">Configure</a>
+                <h3>Payment Info</h3>
+                <p>Payment adapters are auto-selected:<br>
+                   <strong>Online bookings</strong> → Online Gateway<br>
+                   <strong>Walk-in bookings</strong> → POS Terminal</p>
             </div>
             <div class="card">
                 <h3>Maintenance</h3>
                 <p>Manage room maintenance status.</p>
                 <a class="btn purple" href="${pageContext.request.contextPath}/admin/maintenance">Manage</a>
+            </div>
+            <div class="card">
+                <h3>Seasonal Pricing</h3>
+                <p>Configure seasonal rates and multipliers for peak/off-peak periods.</p>
+                <a class="btn orange" href="${pageContext.request.contextPath}/admin/seasonal-pricing">Manage Seasons</a>
             </div>
         </div>
         <br>

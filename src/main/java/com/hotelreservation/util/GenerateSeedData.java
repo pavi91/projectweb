@@ -11,8 +11,7 @@ public class GenerateSeedData {
         String[][] users = {
             {"admin", "admin123", "ADMIN"},
             {"receptionist", "recep123", "RECEPTIONIST"},
-            {"guest", "guest123", "GUEST"},
-            {"maintenance", "maint123", "MAINTENANCE"}
+            {"guest", "guest123", "GUEST"}
         };
 
         System.out.println("-- Seed data for hotel_reservation database");

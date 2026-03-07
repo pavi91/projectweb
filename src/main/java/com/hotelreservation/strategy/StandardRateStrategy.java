@@ -22,3 +22,4 @@ public class StandardRateStrategy implements IPricingStrategy {
     }
 }
 
+

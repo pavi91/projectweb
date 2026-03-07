@@ -17,8 +17,6 @@ INSERT INTO users (username, password_hash, role) VALUES ('receptionist', '$2a$1
 -- guest / guest123
 INSERT INTO users (username, password_hash, role) VALUES ('guest', '$2a$12$qrOTn9o4waMhqaZGJNrIZ.34cu38IyXjprtSyOddCiJ3Hq5GpxoOa', 'GUEST');
 
--- maintenance / maint123
-INSERT INTO users (username, password_hash, role) VALUES ('maintenance', '$2a$12$ib0MQLoFKXZDqFd262NNSOsMBLhnSzk2BzmWR5gWZ.rALDjiKNMQK', 'MAINTENANCE');
 
 -- ========================
 -- Sample Rooms
@@ -44,4 +42,16 @@ VALUES (
     'john.doe@example.com',
     '123 Main Street, Colombo'
 );
+
+-- ========================
+-- Sample Seasonal Pricing
+-- ========================
+INSERT INTO seasonal_pricing (season_name, start_date, end_date, multiplier, is_active)
+VALUES ('Christmas & New Year', '2026-12-15', '2027-01-05', 1.50, TRUE);
+
+INSERT INTO seasonal_pricing (season_name, start_date, end_date, multiplier, is_active)
+VALUES ('Summer Peak', '2026-07-01', '2026-08-31', 1.30, TRUE);
+
+INSERT INTO seasonal_pricing (season_name, start_date, end_date, multiplier, is_active)
+VALUES ('Off-Season Discount', '2026-02-01', '2026-03-31', 0.85, TRUE);
 

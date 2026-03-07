@@ -15,6 +15,12 @@ import com.hotelreservation.repository.impl.ReservationDAOImpl;
 import com.hotelreservation.service.impl.UserServiceImpl;
 import com.hotelreservation.service.impl.PaymentServiceImpl;
 import com.hotelreservation.service.impl.ReportServiceImpl;
+import com.hotelreservation.service.impl.SeasonalPricingServiceImpl;
+import com.hotelreservation.repository.impl.SeasonalPricingDAOImpl;
+import com.hotelreservation.entity.Guest;
+import com.hotelreservation.exception.HotelSystemException;
+import com.hotelreservation.repository.GuestRepository;
+import com.hotelreservation.repository.impl.GuestRepositoryImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,6 +28,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
@@ -41,6 +48,7 @@ public class ReservationServlet extends HttpServlet {
 
     private ReservationController controller;
     private RoomServiceImpl roomService;
+    private GuestRepository guestRepository;
 
     @Override
     public void init() throws ServletException {
@@ -49,12 +57,17 @@ public class ReservationServlet extends HttpServlet {
         roomService = new RoomServiceImpl(new RoomDAOImpl());
         ReservationDAOImpl reservationDAO = new ReservationDAOImpl();
 
+        // Initialize guest repository for mapping userId -> guestId
+        guestRepository = new GuestRepositoryImpl();
+
         BookingService bookingService = new BookingService(
             new OnlineResService(reservationDAO),
             new WalkInResService(reservationDAO),
             roomService,
             new PaymentServiceImpl(),
-            reservationDAO
+            reservationDAO,
+            guestRepository,
+            new SeasonalPricingServiceImpl(new SeasonalPricingDAOImpl())
         );
 
         controller = new ReservationController(bookingService, roomService);
@@ -82,7 +95,13 @@ public class ReservationServlet extends HttpServlet {
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
             }
         } catch (Exception e) {
-            logger.error("Error handling GET request", e);
+            if (e instanceof HotelSystemException hse) {
+                logger.error("Hotel system error handling GET request: [{}] {}", hse.getErrorCode(), hse.getMessage(), hse);
+                request.setAttribute("errorCode", hse.getErrorCode());
+                request.setAttribute("statusCode", hse.getStatusCode());
+            } else {
+                logger.error("Error handling GET request", e);
+            }
             request.setAttribute("error", e.getMessage());
             request.getRequestDispatcher("/jsp/error.jsp").forward(request, response);
         }
@@ -103,13 +122,21 @@ public class ReservationServlet extends HttpServlet {
                 handleSearchResults(request, response);
             } else if (pathInfo.equals("/create")) {
                 handleReservationCreate(request, response);
+            } else if (pathInfo.equals("/pay")) {
+                handlePaymentPage(request, response);
             } else if (pathInfo.equals("/cancel")) {
                 handleReservationCancel(request, response);
             } else {
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
             }
         } catch (Exception e) {
-            logger.error("Error handling POST request", e);
+            if (e instanceof HotelSystemException hse) {
+                logger.error("Hotel system error handling POST request: [{}] {}", hse.getErrorCode(), hse.getMessage(), hse);
+                request.setAttribute("errorCode", hse.getErrorCode());
+                request.setAttribute("statusCode", hse.getStatusCode());
+            } else {
+                logger.error("Error handling POST request", e);
+            }
             request.setAttribute("error", e.getMessage());
             request.getRequestDispatcher("/jsp/error.jsp").forward(request, response);
         }
@@ -149,18 +176,71 @@ public class ReservationServlet extends HttpServlet {
     }
 
     /**
+     * Show payment page with demo card form before creating reservation
+     */
+    private void handlePaymentPage(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            int roomId = Integer.parseInt(request.getParameter("roomId"));
+            String checkIn = request.getParameter("checkIn");
+            String checkOut = request.getParameter("checkOut");
+
+            // Load room details for the summary
+            RoomDTO room = roomService.getRoomById(roomId);
+            if (room != null) {
+                request.setAttribute("room", room);
+                // Calculate total amount
+                long nights = java.time.temporal.ChronoUnit.DAYS.between(
+                    java.time.LocalDate.parse(checkIn), java.time.LocalDate.parse(checkOut));
+                if (nights <= 0) nights = 1;
+                double totalAmount = nights * room.getBasePrice();
+                request.setAttribute("totalAmount", totalAmount);
+            }
+
+            // Pass through all form data
+            request.setAttribute("roomId", String.valueOf(roomId));
+            request.setAttribute("checkIn", checkIn);
+            request.setAttribute("checkOut", checkOut);
+            request.setAttribute("name", request.getParameter("name"));
+            request.setAttribute("nic", request.getParameter("nic"));
+            request.setAttribute("phone", request.getParameter("phone"));
+            request.setAttribute("email", request.getParameter("email"));
+
+            request.getRequestDispatcher("/jsp/guest/payment.jsp").forward(request, response);
+        } catch (Exception e) {
+            logger.error("Error loading payment page", e);
+            request.setAttribute("error", "Error loading payment page: " + e.getMessage());
+            request.getRequestDispatcher("/jsp/guest/roomSearch.jsp").forward(request, response);
+        }
+    }
+
+    /**
      * Handle reservation creation
      */
     private void handleReservationCreate(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         try {
-            // Parse guest details
+            // Get the guest ID from session (set at login time)
+            HttpSession session = request.getSession(false);
             GuestDTO guestDTO = new GuestDTO();
-            guestDTO.setName(request.getParameter("name"));
-            guestDTO.setNic(request.getParameter("nic"));
-            guestDTO.setPhone(request.getParameter("phone"));
-            guestDTO.setEmail(request.getParameter("email"));
+
+            if (session != null && session.getAttribute("guestId") != null) {
+                int guestId = (Integer) session.getAttribute("guestId");
+                guestDTO.setId(guestId);
+                // Use form data for display, but the guestId is what matters for the reservation
+                guestDTO.setName(request.getParameter("name"));
+                guestDTO.setNic(request.getParameter("nic"));
+                guestDTO.setPhone(request.getParameter("phone"));
+                guestDTO.setEmail(request.getParameter("email"));
+                logger.info("Creating reservation with session guestId={}", guestId);
+            } else {
+                // Fallback to form data only (e.g. walk-in or no guest profile)
+                guestDTO.setName(request.getParameter("name"));
+                guestDTO.setNic(request.getParameter("nic"));
+                guestDTO.setPhone(request.getParameter("phone"));
+                guestDTO.setEmail(request.getParameter("email"));
+            }
 
             int roomId = Integer.parseInt(request.getParameter("roomId"));
             String checkIn = request.getParameter("checkIn");
@@ -191,8 +271,26 @@ public class ReservationServlet extends HttpServlet {
     private void handleMyReservations(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        logger.debug("Displaying user's reservations");
-        // TODO: Fetch reservations for logged-in guest
+        logger.debug("Displaying my reservations");
+
+        // Get guestId from session (set at login time)
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("guestId") == null) {
+            logger.warn("No guest profile in session for /reservation/list");
+            response.sendRedirect(request.getContextPath() + "/login?message=Please%20log%20in%20to%20view%20your%20reservations");
+            return;
+        }
+
+        int guestId = (Integer) session.getAttribute("guestId");
+
+        ControllerResult<List<ReservationDTO>> result = controller.listReservationsForGuest(guestId);
+
+        if (result.isSuccess()) {
+            request.setAttribute("reservations", result.getData());
+        } else {
+            request.setAttribute("error", result.getMessage());
+        }
+
         request.getRequestDispatcher("/jsp/guest/myReservations.jsp").forward(request, response);
     }
 

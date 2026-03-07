@@ -3,8 +3,11 @@ package com.hotelreservation.servlet;
 import com.hotelreservation.controller.SystemController;
 import com.hotelreservation.controller.SystemController.AuthResult;
 import com.hotelreservation.dto.UserDTO;
+import com.hotelreservation.entity.Guest;
 import com.hotelreservation.service.UserService;
 import com.hotelreservation.service.impl.UserServiceImpl;
+import com.hotelreservation.repository.GuestRepository;
+import com.hotelreservation.repository.impl.GuestRepositoryImpl;
 import com.hotelreservation.repository.impl.UserDAOImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +31,7 @@ public class LoginServlet extends HttpServlet {
 
     private SystemController systemController;
     private UserService userService;
+    private GuestRepository guestRepository;
 
     @Override
     public void init() throws ServletException {
@@ -35,6 +39,7 @@ public class LoginServlet extends HttpServlet {
         // Initialize services
         userService = new UserServiceImpl(new UserDAOImpl());
         systemController = new SystemController(userService);
+        guestRepository = new GuestRepositoryImpl();
         logger.info("LoginServlet initialized");
     }
 
@@ -128,6 +133,21 @@ public class LoginServlet extends HttpServlet {
         session.setAttribute("username", user.getUsername());
         session.setAttribute("role", user.getRole());
 
+        // For GUEST users, resolve and store their guest profile ID
+        if ("GUEST".equals(user.getRole())) {
+            try {
+                java.util.Optional<Guest> guestOpt = guestRepository.findByUserId(user.getId());
+                if (guestOpt.isPresent()) {
+                    session.setAttribute("guestId", guestOpt.get().getId());
+                    logger.info("Guest profile resolved at login: userId={} -> guestId={}", user.getId(), guestOpt.get().getId());
+                } else {
+                    logger.warn("No guest profile found for userId={}", user.getId());
+                }
+            } catch (Exception e) {
+                logger.error("Error resolving guest profile for userId={}", user.getId(), e);
+            }
+        }
+
         // Set timeout (30 minutes)
         session.setMaxInactiveInterval(1800);
 
@@ -145,8 +165,6 @@ public class LoginServlet extends HttpServlet {
                 return contextPath + "/frontdesk/dashboard";
             case "ADMIN":
                 return contextPath + "/admin/dashboard";
-            case "MAINTENANCE":
-                return contextPath + "/maintenance/dashboard";
             default:
                 logger.warn("Unknown role for dashboard redirect: {}", role);
                 return contextPath + "/";

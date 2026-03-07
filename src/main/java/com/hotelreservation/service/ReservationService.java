@@ -38,7 +38,7 @@ public abstract class ReservationService {
      * @param room the room
      * @return the processed and saved reservation
      */
-    public Reservation processBooking(Guest guest, Room room) {
+    public Reservation processBooking(Guest guest, Room room) throws Exception {
         // Calculate total using pricing strategy
         int nights = calculateNights(guest);
         double totalAmount = calculateTotal(nights, room.getBasePrice());
@@ -49,10 +49,13 @@ public abstract class ReservationService {
         // Confirm the reservation
         reservation.confirm();
 
-        // Save to repository
-        reservationRepository.save(reservation);
+        // Save to repository and verify it succeeded
+        Reservation saved = reservationRepository.save(reservation);
+        if (saved == null) {
+            throw new Exception("Failed to save reservation to database. Guest ID: " + guest.getId() + ", Room ID: " + room.getId());
+        }
 
-        return reservation;
+        return saved;
     }
 
     /**

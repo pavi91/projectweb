@@ -17,6 +17,43 @@
   </filter-mapping>
 
   <servlet>
+    <servlet-name>SessionDebugServlet</servlet-name>
+    <jsp-file>/jsp/guest/sessionDebug.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionDebugServlet</servlet-name>
+    <url-pattern>/debug/session</url-pattern>
+  </servlet-mapping>
+
+  <!-- DEV ONLY - SQL Query Debug Page (remove before production, see DEV_FEATURES_TO_REMOVE.md) -->
+  <servlet>
+    <servlet-name>QueryDebugServlet</servlet-name>
+    <jsp-file>/jsp/guest/queryDebug.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QueryDebugServlet</servlet-name>
+    <url-pattern>/debug/queries</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>HelpPage</servlet-name>
+    <jsp-file>/jsp/help.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelpPage</servlet-name>
+    <url-pattern>/help</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SignUpServlet</servlet-name>
+    <servlet-class>com.hotelreservation.servlet.SignUpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignUpServlet</servlet-name>
+    <url-pattern>/signup</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>com.hotelreservation.servlet.LoginServlet</servlet-class>
   </servlet>
@@ -65,6 +102,10 @@
     <session-timeout>30</session-timeout>
   </session-config>
 
+  <error-page>
+    <error-code>403</error-code>
+    <location>/jsp/accessDenied.jsp</location>
+  </error-page>
   <error-page>
     <error-code>404</error-code>
     <location>/jsp/404.jsp</location>

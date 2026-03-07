@@ -11,12 +11,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Properties;
 
-/**
- * Thread-safe Singleton for managing database connections.
- * Uses HikariCP connection pooling for optimal performance.
- *
- * Implements double-checked locking for thread-safe lazy initialization.
- */
+
 public class DatabaseConnection {
     private static final Logger logger = LoggerFactory.getLogger(DatabaseConnection.class);
     private static volatile DatabaseConnection instance;
@@ -24,18 +19,13 @@ public class DatabaseConnection {
     private HikariDataSource dataSource;
     private Properties config;
 
-    /**
-     * Private constructor - prevents direct instantiation
-     */
+
     private DatabaseConnection() {
         loadConfiguration();
         initializeDataSource();
     }
 
-    /**
-     * Thread-safe getInstance using double-checked locking pattern
-     * @return singleton instance
-     */
+
     public static DatabaseConnection getInstance() {
         if (instance == null) {
             synchronized (lock) {
@@ -48,9 +38,7 @@ public class DatabaseConnection {
         return instance;
     }
 
-    /**
-     * Load database configuration from properties file
-     */
+
     private void loadConfiguration() {
         config = new Properties();
         try (InputStream input = getClass().getClassLoader().getResourceAsStream("application.properties")) {

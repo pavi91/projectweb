@@ -1,6 +1,5 @@
 package com.hotelreservation.filter;
 
-import com.hotelreservation.dto.UserDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,6 +20,7 @@ import java.util.Set;
  * - Validate user role for requested URL
  * - Redirect to login if not authenticated
  * - Prevent unauthorized access
+ * - Allow internal JSP forwards (FORWARD dispatches) without re-checking auth
  */
 public class AuthFilter implements Filter {
     private static final Logger logger = LoggerFactory.getLogger(AuthFilter.class);
@@ -31,12 +31,20 @@ public class AuthFilter implements Filter {
         PUBLIC_PATHS.add("/");
         PUBLIC_PATHS.add("");
         PUBLIC_PATHS.add("/login");
+        PUBLIC_PATHS.add("/signup");
         PUBLIC_PATHS.add("/logout");
         PUBLIC_PATHS.add("/jsp/login.jsp");
+        PUBLIC_PATHS.add("/jsp/signup.jsp");
         PUBLIC_PATHS.add("/jsp/error.jsp");
         PUBLIC_PATHS.add("/jsp/404.jsp");
         PUBLIC_PATHS.add("/jsp/500.jsp");
+        PUBLIC_PATHS.add("/jsp/accessDenied.jsp");
         PUBLIC_PATHS.add("/index.jsp");
+        PUBLIC_PATHS.add("/help");
+        PUBLIC_PATHS.add("/jsp/help.jsp");
+        // DEBUG ONLY - remove before production
+        PUBLIC_PATHS.add("/debug/session");
+        PUBLIC_PATHS.add("/debug/queries");
     }
 
     // Protected URL path prefixes (relative to context path) and their required roles
@@ -56,18 +64,36 @@ public class AuthFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
+        // Allow internal forwards (servlet -> JSP) without re-checking authorization.
+        // When a servlet forwards to a JSP (e.g., /jsp/admin/dashboard.jsp), the filter
+        // fires again with DispatcherType.FORWARD. The original servlet already passed auth,
+        // so we allow the forward through.
+        if (request.getDispatcherType() == DispatcherType.FORWARD ||
+            request.getDispatcherType() == DispatcherType.INCLUDE ||
+            request.getDispatcherType() == DispatcherType.ERROR) {
+            filterChain.doFilter(request, response);
+            return;
+        }
+
         String requestURI = request.getRequestURI();
         String contextPath = request.getContextPath();
         // Get path relative to context root (e.g. "/login", "/reservation/search")
         String path = requestURI.substring(contextPath.length());
         String method = request.getMethod();
 
-        logger.debug("Request: {} {} (path: {})", method, requestURI, path);
+        logger.debug("AuthFilter: {} {} (path: {})", method, requestURI, path);
 
         // Allow public URLs without authentication
         if (isPublicUrl(path)) {
             logger.debug("Public URL, allowing access: {}", path);
             filterChain.doFilter(request, response);
+            return;
+        }
+
+        // Block direct access to JSP files — users must go through servlets
+        if (path.startsWith("/jsp/")) {
+            logger.warn("Direct JSP access blocked: {}", path);
+            response.sendError(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
 
@@ -96,7 +122,7 @@ public class AuthFilter implements Filter {
         // Check role-based access
         if (!hasAccessToUrl(path, userRole)) {
             logger.warn("Access denied for user with role {} to URL: {}", userRole, path);
-            respondWithAccessDenied(request, response, userRole);
+            forwardToAccessDenied(request, response, userRole);
             return;
         }
 
@@ -133,29 +159,27 @@ public class AuthFilter implements Filter {
     /**
      * Check if user has access to requested URL based on role
      * @param path the path relative to context root
+     * @param userRole the user's role
      */
     private boolean hasAccessToUrl(String path, String userRole) {
-        // Guest URLs
+        // Guest URLs — /reservation/*
         if (path.startsWith(GUEST_PATTERN)) {
             return "GUEST".equals(userRole);
         }
 
-        // Receptionist URLs
+        // Receptionist URLs — /frontdesk/*
         if (path.startsWith(DESK_PATTERN)) {
             return "RECEPTIONIST".equals(userRole);
         }
 
-        // Admin URLs
+        // Admin URLs — /admin/*
         if (path.startsWith(ADMIN_PATTERN)) {
             return "ADMIN".equals(userRole);
         }
 
-        // Dashboard access based on role
-        if (path.contains("/dashboard")) {
-            return true;
-        }
-
-        return false;
+        // Any authenticated user can access root-level protected URLs
+        // (e.g., a profile page in the future)
+        return true;
     }
 
     /**
@@ -168,16 +192,13 @@ public class AuthFilter implements Filter {
     }
 
     /**
-     * Respond with access denied message
+     * Forward to access denied JSP page with role info
      */
-    private void respondWithAccessDenied(HttpServletRequest request, HttpServletResponse response, String userRole) throws IOException {
-        String contextPath = request.getContextPath();
-        logger.warn("Access denied for role: {}", userRole);
+    private void forwardToAccessDenied(HttpServletRequest request, HttpServletResponse response, String userRole) throws IOException, ServletException {
         response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-        response.setContentType("text/html");
-        response.getWriter().println("<h1>Access Denied</h1>");
-        response.getWriter().println("<p>Your role (" + userRole + ") does not have access to this page.</p>");
-        response.getWriter().println("<a href='" + contextPath + "/'>Go to Home</a>");
+        request.setAttribute("userRole", userRole);
+        request.setAttribute("error", "Your role (" + userRole + ") does not have permission to access this page.");
+        request.getRequestDispatcher("/jsp/accessDenied.jsp").forward(request, response);
     }
 
     /**
@@ -187,4 +208,3 @@ public class AuthFilter implements Filter {
         return param.replace(" ", "%20").replace(".", "%2E");
     }
 }
-

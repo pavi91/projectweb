@@ -37,7 +37,6 @@
                 <select name="role" required>
                     <option value="">-- Select Role --</option>
                     <option value="RECEPTIONIST">Receptionist</option>
-                    <option value="MAINTENANCE">Maintenance Crew</option>
                 </select>
                 <button type="submit">Create Account</button>
             </form>

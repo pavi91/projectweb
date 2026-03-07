@@ -16,7 +16,12 @@
     <div class="container">
         <div class="card">
             <p class="success"><%= request.getAttribute("message") != null ? request.getAttribute("message") : "Reservation cancelled successfully." %></p>
-            <p>A refund will be processed to the original payment method.</p>
+            <div style="background: #fff3cd; color: #856404; border: 1px solid #ffc107; padding: 15px; border-radius: 6px; margin-top: 15px;">
+                <strong>💰 Refund Notice</strong><br>
+                Refunds are processed <strong>offline</strong> by our accounts department.
+                Please allow <strong>5–7 business days</strong> for the refund to appear on your original payment method.
+                If you have any questions, contact the front desk.
+            </div>
         </div>
         <a class="btn" href="${pageContext.request.contextPath}/reservation/search">Search Rooms</a>
         <a class="btn" href="${pageContext.request.contextPath}/">Home</a>
