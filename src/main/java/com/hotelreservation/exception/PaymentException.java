@@ -9,7 +9,7 @@ public class PaymentException extends HotelSystemException {
     }
 
     public PaymentException(String message, Throwable cause) {
-        super(message, cause);
+        super(message, "PAYMENT_FAILED", 402, cause);
     }
 }
 

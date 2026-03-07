@@ -1,5 +1,7 @@
 package com.hotelreservation.service.impl;
 
+import com.hotelreservation.adapter.OnlineGatewayAdapter;
+import com.hotelreservation.adapter.POSAdapter;
 import com.hotelreservation.dto.GuestDTO;
 import com.hotelreservation.dto.ReservationDTO;
 import com.hotelreservation.dto.RoomDTO;
@@ -10,9 +12,13 @@ import com.hotelreservation.exception.PaymentException;
 import com.hotelreservation.exception.RoomNotAvailableException;
 import com.hotelreservation.mapper.GuestMapper;
 import com.hotelreservation.mapper.RoomMapper;
+import com.hotelreservation.repository.GuestRepository;
 import com.hotelreservation.repository.ReservationRepository;
 import com.hotelreservation.repository.RoomRepository;
 import com.hotelreservation.service.PaymentService;
+import com.hotelreservation.service.RoomService;
+import com.hotelreservation.service.SeasonalPricingService;
+import com.hotelreservation.strategy.IPricingStrategy;
 import com.hotelreservation.strategy.StandardRateStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,18 +39,34 @@ public class BookingService {
     private RoomService roomService;
     private PaymentService paymentService;
     private ReservationRepository reservationRepository;
+    private GuestRepository guestRepository;
+    private SeasonalPricingService seasonalPricingService;
 
     public BookingService(
             OnlineResService onlineResService,
             WalkInResService walkInResService,
             RoomService roomService,
             PaymentService paymentService,
-            ReservationRepository reservationRepository) {
+            ReservationRepository reservationRepository,
+            GuestRepository guestRepository) {
+        this(onlineResService, walkInResService, roomService, paymentService, reservationRepository, guestRepository, null);
+    }
+
+    public BookingService(
+            OnlineResService onlineResService,
+            WalkInResService walkInResService,
+            RoomService roomService,
+            PaymentService paymentService,
+            ReservationRepository reservationRepository,
+            GuestRepository guestRepository,
+            SeasonalPricingService seasonalPricingService) {
         this.onlineResService = onlineResService;
         this.walkInResService = walkInResService;
         this.roomService = roomService;
         this.paymentService = paymentService;
         this.reservationRepository = reservationRepository;
+        this.guestRepository = guestRepository;
+        this.seasonalPricingService = seasonalPricingService;
     }
 
     /**
@@ -67,17 +89,22 @@ public class BookingService {
             // Get room details
             Room room = getRoomEntity(roomId);
 
-            // Map DTOs to entities
-            Guest guest = GuestMapper.toEntity(guestDTO);
+            // Resolve guest from DB by NIC, or create a new guest record
+            Guest guest = resolveOrCreateGuest(guestDTO);
 
             // Set dates for reservation service
             onlineResService.setReservationDates(checkIn, checkOut);
-            onlineResService.setPricingStrategy(new StandardRateStrategy());
+            onlineResService.setPricingStrategy(resolveStrategyForDate(checkIn));
 
             // Process booking (creates and saves reservation)
             Reservation reservation = onlineResService.processBooking(guest, room);
 
-            // Process payment
+            if (reservation == null) {
+                throw new Exception("Failed to create reservation");
+            }
+
+            // Process payment via Online Gateway (card payment)
+            paymentService.setPaymentAdapter(new OnlineGatewayAdapter());
             double totalAmount = reservation.getTotalAmount();
             boolean paymentSuccess = paymentService.processPayment(totalAmount);
             if (!paymentSuccess) {
@@ -122,17 +149,18 @@ public class BookingService {
             // Get room details
             Room room = getRoomEntity(roomId);
 
-            // Map DTOs to entities
-            Guest guest = GuestMapper.toEntity(guestDTO);
+            // Resolve guest from DB by NIC, or create a new guest record
+            Guest guest = resolveOrCreateGuest(guestDTO);
 
             // Set dates for reservation service
             walkInResService.setReservationDates(checkIn, checkOut);
-            walkInResService.setPricingStrategy(new StandardRateStrategy());
+            walkInResService.setPricingStrategy(resolveStrategyForDate(checkIn));
 
             // Process booking (creates and saves reservation)
             Reservation reservation = walkInResService.processBooking(guest, room);
 
-            // Process payment via POS
+            // Process payment via POS terminal
+            paymentService.setPaymentAdapter(new POSAdapter());
             double totalAmount = reservation.getTotalAmount();
             boolean paymentSuccess = paymentService.processPayment(totalAmount);
             if (!paymentSuccess) {
@@ -164,10 +192,36 @@ public class BookingService {
      * @throws Exception if check-in fails
      */
     public void checkIn(String reservationId) throws Exception {
-        logger.info("Checking in guest for reservation: {}", reservationId);
+        logger.info("Checking in guest for reservation: '{}' (length={})", reservationId, reservationId != null ? reservationId.length() : "null");
 
         try {
-            Reservation reservation = reservationRepository.findById(reservationId)
+            // DEBUG: Direct SQL test to bypass DAO layer
+            try (java.sql.Connection conn = com.hotelreservation.persistence.DatabaseConnection.getInstance().getConnection();
+                 java.sql.PreparedStatement ps = conn.prepareStatement("SELECT id, status FROM reservations WHERE id = ?")) {
+                ps.setString(1, reservationId);
+                try (java.sql.ResultSet rs = ps.executeQuery()) {
+                    if (rs.next()) {
+                        logger.info("DEBUG DIRECT SQL: Found reservation '{}' with status '{}'", rs.getString("id"), rs.getString("status"));
+                    } else {
+                        logger.error("DEBUG DIRECT SQL: NO ROW found for id='{}'", reservationId);
+                        // Also check total count
+                        try (java.sql.PreparedStatement ps2 = conn.prepareStatement("SELECT COUNT(*) AS cnt FROM reservations")) {
+                            try (java.sql.ResultSet rs2 = ps2.executeQuery()) {
+                                if (rs2.next()) {
+                                    logger.error("DEBUG DIRECT SQL: Total reservations in table = {}", rs2.getInt("cnt"));
+                                }
+                            }
+                        }
+                    }
+                }
+            } catch (Exception dbg) {
+                logger.error("DEBUG DIRECT SQL failed", dbg);
+            }
+
+            java.util.Optional<Reservation> found = reservationRepository.findById(reservationId);
+            logger.info("findById result for '{}': present={}", reservationId, found.isPresent());
+
+            Reservation reservation = found
                     .orElseThrow(() -> new Exception("Reservation not found: " + reservationId));
 
             // Confirm and check in
@@ -202,14 +256,17 @@ public class BookingService {
             reservation.checkOut();
             reservationRepository.update(reservation);
 
-            // Update room status to AVAILABLE
+            // Update room: set AVAILABLE but mark as DIRTY — needs cleaning by maintenance before re-booking
             roomService.updateRoomStatus(reservation.getRoomId(), "AVAILABLE");
-            roomService.markRoomClean(reservation.getRoomId());
+            roomService.markRoomDirty(reservation.getRoomId());
 
             logger.info("Check-out successful for reservation: {}", reservationId);
 
-            // Return reservation details with bill
-            Room room = getRoomEntity(reservation.getRoomId());
+            // Return reservation details with bill (use getRoomFromService — no availability check needed)
+            Room room = getRoomFromService(reservation.getRoomId());
+            if (room == null) {
+                throw new Exception("Room not found for reservation: " + reservationId);
+            }
             ReservationDTO dto = new ReservationDTO(
                 reservation.getId(),
                 reservation.getGuestId(),
@@ -254,14 +311,8 @@ public class BookingService {
                 roomService.updateRoomStatus(reservation.getRoomId(), "AVAILABLE");
             }
 
-            // Process refund
-            try {
-                paymentService.processRefund(reservation.getTotalAmount(), "Reservation cancelled");
-            } catch (PaymentException e) {
-                logger.warn("Error processing refund for cancellation", e);
-            }
-
-            logger.info("Reservation cancelled successfully: {}", reservationId);
+            // Refunds are handled offline — no automatic refund processing
+            logger.info("Reservation cancelled successfully: {}. Refund to be handled offline.", reservationId);
             return true;
         } catch (Exception e) {
             logger.error("Error cancelling reservation", e);
@@ -285,7 +336,99 @@ public class BookingService {
         }
     }
 
+    /**
+     * Get all reservations
+     * @return list of all ReservationDTOs
+     */
+    public List<ReservationDTO> getAllReservations() {
+        try {
+            List<Reservation> reservations = reservationRepository.findAll();
+            List<ReservationDTO> dtos = new java.util.ArrayList<>();
+            for (Reservation reservation : reservations) {
+                dtos.add(mapToDTO(reservation));
+            }
+            logger.info("Retrieved {} reservations", dtos.size());
+            return dtos;
+        } catch (Exception e) {
+            logger.error("Error retrieving all reservations", e);
+            return new java.util.ArrayList<>();
+        }
+    }
+
+    /**
+     * Get all reservations for a specific guest
+     * @param guestId the guest ID
+     * @return list of ReservationDTOs for the guest
+     */
+    public List<ReservationDTO> getReservationsByGuest(int guestId) {
+        try {
+            List<Reservation> reservations = reservationRepository.findByGuest(guestId);
+            List<ReservationDTO> dtos = new java.util.ArrayList<>();
+            for (Reservation reservation : reservations) {
+                dtos.add(mapToDTO(reservation));
+            }
+            logger.info("Retrieved {} reservations for guest {}", dtos.size(), guestId);
+            return dtos;
+        } catch (Exception e) {
+            logger.error("Error retrieving reservations for guest: {}", guestId, e);
+            return new java.util.ArrayList<>();
+        }
+    }
+
     // ===================== Helper Methods =====================
+
+    /**
+     * Resolve the correct pricing strategy for the given check-in date.
+     * Delegates to SeasonalPricingService if available; falls back to StandardRateStrategy.
+     * This is where the Strategy pattern comes alive — the strategy is chosen at runtime
+     * based on admin-configured seasons stored in the database.
+     *
+     * @param checkInDate the reservation check-in date
+     * @return the appropriate IPricingStrategy
+     */
+    private IPricingStrategy resolveStrategyForDate(LocalDate checkInDate) {
+        if (seasonalPricingService != null) {
+            IPricingStrategy strategy = seasonalPricingService.resolveStrategy(checkInDate);
+            logger.info("Resolved pricing strategy for {}: {}", checkInDate, strategy.getStrategyName());
+            return strategy;
+        }
+        logger.debug("No SeasonalPricingService configured — using StandardRateStrategy");
+        return new StandardRateStrategy();
+    }
+
+    /**
+     * Resolve an existing guest from the DB by NIC, or create a new guest record.
+     * This ensures the Guest entity always has a valid DB id for foreign-key references.
+     */
+    private Guest resolveOrCreateGuest(GuestDTO guestDTO) throws Exception {
+        // If the servlet already resolved the guest from the session, use that ID directly
+        if (guestDTO.getId() > 0) {
+            java.util.Optional<Guest> byId = guestRepository.findById(guestDTO.getId());
+            if (byId.isPresent()) {
+                logger.info("Using session-resolved guest: id={}, NIC={}", byId.get().getId(), byId.get().getNic());
+                return byId.get();
+            }
+            logger.warn("Guest ID {} from session not found in DB, falling back to NIC lookup", guestDTO.getId());
+        }
+
+        // Try to find existing guest by NIC
+        if (guestDTO.getNic() != null && !guestDTO.getNic().trim().isEmpty()) {
+            java.util.Optional<Guest> existing = guestRepository.findByNic(guestDTO.getNic());
+            if (existing.isPresent()) {
+                logger.info("Found existing guest by NIC {}: id={}", guestDTO.getNic(), existing.get().getId());
+                return existing.get();
+            }
+        }
+
+        // No existing guest found — create a new one
+        Guest newGuest = GuestMapper.toEntity(guestDTO);
+        Guest saved = guestRepository.save(newGuest);
+        if (saved == null || saved.getId() <= 0) {
+            throw new Exception("Failed to create guest record for NIC: " + guestDTO.getNic());
+        }
+        logger.info("Created new guest record: id={}, NIC={}", saved.getId(), saved.getNic());
+        return saved;
+    }
 
     private void validateReservationInput(GuestDTO guestDTO, int roomId, LocalDate checkIn, LocalDate checkOut) throws Exception {
         if (guestDTO == null) {

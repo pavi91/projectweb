@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * SystemController - handles authentication for all actors
- * Used by Guest, Receptionist, Admin, and Maintenance Crew for login/logout
+ * Used by Guest, Receptionist, and Admin for login/logout
  */
 public class SystemController {
     private static final Logger logger = LoggerFactory.getLogger(SystemController.class);

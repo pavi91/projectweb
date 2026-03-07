@@ -84,6 +84,20 @@ CREATE TABLE IF NOT EXISTS payment_transactions (
     FOREIGN KEY (reservation_id) REFERENCES reservations(id)
 );
 
+-- Seasonal Pricing Table (for Strategy pattern - SeasonalRateStrategy)
+CREATE TABLE IF NOT EXISTS seasonal_pricing (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    season_name VARCHAR(50) NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    multiplier DECIMAL(4, 2) NOT NULL DEFAULT 1.00,
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_season_dates (start_date, end_date),
+    INDEX idx_season_active (is_active)
+);
+
 -- Create indexes for common queries
 CREATE INDEX idx_users_username ON users(username);
 CREATE INDEX idx_rooms_status ON rooms(status);

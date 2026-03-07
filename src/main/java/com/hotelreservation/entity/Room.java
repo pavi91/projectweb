@@ -53,10 +53,11 @@ public class Room {
 
     /**
      * Check if room is available for reservation
-     * @return true if available, false otherwise
+     * Room must have AVAILABLE status AND be clean (cleaned by maintenance after last checkout)
+     * @return true if available and clean, false otherwise
      */
     public boolean isAvailable() {
-        return "AVAILABLE".equals(this.status);
+        return "AVAILABLE".equals(this.status) && this.isClean;
     }
 
     /**
